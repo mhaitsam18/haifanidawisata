@@ -2,41 +2,42 @@
 <header id="header_wrapper">
 	<div class="header_top">
 		<div class="container">
-			<div class="row">	
+			<div class="row">
 				<div class="col-md-6 col-sm-6">
-					<?php 
+					<?php
 					$dashboard = $this->db->get_where('dashboard', ['id' => 1])->row_array();
 					$this->db->order_by('id', 'DESC');
 					$haifa = $this->db->get('haifa', 1)->row_array(); ?>
-					<p>SK: <?= $haifa['nomor_sk'].' ' ?> <i class="fa fa-phone"></i> For Support? Call Us: <span><?= $dashboard['contact'] ?></span></p>
+					<p>SK: <?= $haifa['nomor_sk'] . ' ' ?> <i class="fa fa-phone"></i> Untuk Bantuan? Hubungi Kami: <span><?= $dashboard['contact'] ?></span></p>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<div class="top_menu">
 						<style type="text/css">
-	                        .d-flex {
-	                            display: flex !important;
-	                        }
-
-	                        .icon-circle {
-	                          height: 2.5rem;
-	                          width: 2.5rem;
-	                          border-radius: 100%;
-	                          display: flex;
-	                          align-items: center;
-	                          justify-content: center;
-	                        }
-	                        .align-items-center {
-							  align-items: center !important;
+							.d-flex {
+								display: flex !important;
 							}
+
+							.icon-circle {
+								height: 2.5rem;
+								width: 2.5rem;
+								border-radius: 100%;
+								display: flex;
+								align-items: center;
+								justify-content: center;
+							}
+
+							.align-items-center {
+								align-items: center !important;
+							}
+
 							.font-weight-bold {
-							  font-weight: 700 !important;
+								font-weight: 700 !important;
 							}
+
 							.text-gray-500 {
-							  color: #b7b9cc !important;
+								color: #b7b9cc !important;
 							}
-
-
-	                    </style>
+						</style>
 						<ul>
 							<!-- <li><a href="#"><i class="fa fa-globe"></i> Languages</a>
 								<ul class="sub-menu">
@@ -45,75 +46,106 @@
 									<li><a href="#">German</a></li>
 								</ul>
 							</li> -->
-							<?php if (!$this->session->userdata('email')): ?>
-								<li class="travelite_login_alert"><a href="#">Login</a></li>
-								<li class="travelite_signup_alert"><a href="#">Signup</a></li>
-							<?php else: ?>
+							<?php if (!$this->session->userdata('email')) : ?>
+								<li class="travelite_login_alert"><a href="#">Masuk</a></li>
+								<li class="travelite_signup_alert"><a href="#">Daftar</a></li>
+							<?php else : ?>
 								<!-- Nav Item - Alerts -->
-								<?php 
-		                            $this->db->order_by('id', 'DESC');
-		                            $notifikasi = $this->db->get_where('notifikasi', ['id_user' => $user['id']], 5)->result_array();
-		                            $notifikasi_unread = $this->db->get_where('notifikasi', ['id_user' => $user['id'], 'is_read' => 0])->num_rows();
-		                         ?>
+								<?php
+								$this->db->order_by('id', 'DESC');
+								$notifikasi = $this->db->get_where('notifikasi', ['id_user' => $user['id']], 5)->result_array();
+								$notifikasi_unread = $this->db->get_where('notifikasi', ['id_user' => $user['id'], 'is_read' => 0])->num_rows();
+								?>
 								<li class="nav-item dropdown no-arrow mx-1" id="show">
-		                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-		                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		                                <i class="fa fa-bell fa-fw"></i>
-		                                <!-- Counter - Alerts -->
-		                                <span class="badge badge-danger badge-counter">
-		                                    <?php if ($notifikasi_unread > 5): ?>
-		                                        5+
-		                                    <?php else: ?>
-		                                        <?= $notifikasi_unread ?>
-		                                    <?php endif ?>
-		                                </span>
-		                            </a>
-		                            <!-- Dropdown - Alerts -->
-		                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-		                                aria-labelledby="alertsDropdown" style="width: 400px;">
-		                                <h6 class="dropdown-header">
-		                                	Alerts Center
-		                                <a href="" class="forgot_link" style="color: #A3D0EF;" onclick="notifikasi()">
-		                                    Tandai Semua Sudah dibaca
-		                                </a>
-		                                </h6>
-		                                <?php $icon = ''; ?>
-		                                <?php $bg = ''; ?>
-		                                <?php foreach ($notifikasi as $key): ?>
-		                                    <?php 
-		                                    switch ($key['id_kategori_notifikasi']) {
-		                                    	case 1: $bg = 'bg-primary'; $icon = 'fa fa-warning'; break;
-		                                    	case 2: $bg = 'bg-primary'; $icon = 'fa fa-warning'; break;
-		                                    	case 3: $bg = 'bg-primary'; $icon = 'fa fa-warning'; break;
-		                                    	case 4: $bg = 'bg-primary'; $icon = 'fa fa-warning'; break;
-		                                    	case 5: $bg = 'bg-primary'; $icon = 'fa fa-file'; break;
-		                                    	case 6: $bg = 'bg-primary'; $icon = 'fa fa-file'; break;
-		                                    	case 7: $bg = 'bg-primary'; $icon = 'fa fa-file'; break;
-		                                    	case 8: $bg = 'bg-primary'; $icon = 'fa fa-file'; break;
-		                                    	case 9: $bg = 'bg-primary'; $icon = 'fa fa-warning'; break;
-		                                    	case 10: $bg = 'bg-primary'; $icon = 'fa fa-dollar'; break;
-		                                         
-		                                         default: $bg = 'bg-primary'; $icon = 'fas fa-file-alt'; break;
-		                                     } ?>
-			                                <a class="dropdown-item d-flex" href="#">
-			                                    <div class="ml-3" style="margin-left: 20px; margin-right: 20px;">
-			                                        <div class="icon-circle <?= $bg ?>">
-			                                            <i class="<?= $icon ?> text-white"></i>
-			                                        </div>
-			                                    </div>
-			                                    <div class="">
-			                                        <h6 class="small" style="color: black; margin-bottom: 0px;"><?= date('j F Y, H:i:s', strtotime($key['waktu_notifikasi'])) ?></h6>
-			                                        <?php if ($key['is_read'] == 0): ?>
-		                                                <span class="font-weight-bold" style="color: black; margin-top: 0px;"><?= $key['pesan'] ?></span>
-		                                            <?php else: ?>
-		                                            	<span class="" style="color: black; margin-top: 0px;">
-		                                                	<?= $key['pesan'] ?>
-		                                            	</span>
-		                                            <?php endif ?>
-			                                    </div>
-			                                </a>
-		                                <?php endforeach ?>
-		                                <!-- <a class="dropdown-item d-flex" href="#">
+									<a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<i class="fa fa-bell fa-fw"></i>
+										<!-- Counter - Alerts -->
+										<span class="badge badge-danger badge-counter">
+											<?php if ($notifikasi_unread > 5) : ?>
+												5+
+											<?php else : ?>
+												<?= $notifikasi_unread ?>
+											<?php endif ?>
+										</span>
+									</a>
+									<!-- Dropdown - Alerts -->
+									<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown" style="width: 400px;">
+										<h6 class="dropdown-header">
+											Pusat Notifikasi
+											<a href="" class="forgot_link" style="color: #A3D0EF;" onclick="notifikasi()">
+												Tandai Semua Sudah dibaca
+											</a>
+										</h6>
+										<?php $icon = ''; ?>
+										<?php $bg = ''; ?>
+										<?php foreach ($notifikasi as $key) : ?>
+											<?php
+											switch ($key['id_kategori_notifikasi']) {
+												case 1:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-warning';
+													break;
+												case 2:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-warning';
+													break;
+												case 3:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-warning';
+													break;
+												case 4:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-warning';
+													break;
+												case 5:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-file';
+													break;
+												case 6:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-file';
+													break;
+												case 7:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-file';
+													break;
+												case 8:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-file';
+													break;
+												case 9:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-warning';
+													break;
+												case 10:
+													$bg = 'bg-primary';
+													$icon = 'fa fa-dollar';
+													break;
+
+												default:
+													$bg = 'bg-primary';
+													$icon = 'fas fa-file-alt';
+													break;
+											} ?>
+											<a class="dropdown-item d-flex" href="#">
+												<div class="ml-3" style="margin-left: 20px; margin-right: 20px;">
+													<div class="icon-circle <?= $bg ?>">
+														<i class="<?= $icon ?> text-white"></i>
+													</div>
+												</div>
+												<div class="">
+													<h6 class="small" style="color: black; margin-bottom: 0px;"><?= date('j F Y, H:i:s', strtotime($key['waktu_notifikasi'])) ?></h6>
+													<?php if ($key['is_read'] == 0) : ?>
+														<span class="font-weight-bold" style="color: black; margin-top: 0px;"><?= $key['pesan'] ?></span>
+													<?php else : ?>
+														<span class="" style="color: black; margin-top: 0px;">
+															<?= $key['pesan'] ?>
+														</span>
+													<?php endif ?>
+												</div>
+											</a>
+										<?php endforeach ?>
+										<!-- <a class="dropdown-item d-flex" href="#">
 		                                    <div class="ml-3" style="margin-left: 20px; margin-right: 20px;">
 		                                        <div class="icon-circle bg-primary">
 		                                            <i class="fa fa-file text-white"></i>
@@ -124,11 +156,11 @@
 		                                        <span class="font-weight-bold" style="color: black; margin-top: 0px;">A new monthly report is ready to download!</span>
 		                                    </div>
 		                                </a> -->
-		                                <a class="dropdown-item text-center btn btn-link" style="color: black;" href="#">Show All Alerts</a>
-		                            </div>
-		                        </li>
-								<li><a href="<?= base_url('Profil/') ?>">My Account</a></li>
-								<li class=""><a href="<?= base_url('Auth/logout') ?>">Logout</a></li>
+										<a class="dropdown-item text-center btn btn-link" style="color: black;" href="#">Lihat Semua Notifikasi</a>
+									</div>
+								</li>
+								<li><a href="<?= base_url('Profil/') ?>">Akun Saya</a></li>
+								<li class=""><a href="<?= base_url('Auth/logout') ?>">Keluar</a></li>
 							<?php endif ?>
 							<!-- <li><a href="#">USD</a>
 								<ul class="sub-menu">
@@ -150,30 +182,30 @@
 					<!-- login form start -->
 					<div class="popup_alert_main travelite_login_form">
 						<div class="login_heading">
-							login
+							Masuk
 							<span class="close_btn"><i class="fa fa-times"></i></span>
 						</div>
 						<div class="popup_inner">
 							<form action="<?= base_url('Auth/login') ?>" method="post">
 								<input type="email" name="email" id="" placeholder="Email Id" class="input_login">
-								<?= form_error('email','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="password" name="password" id="password" placeholder="Password" class="input_login">
-								<?= form_error('password','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('password', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="checkbox" id="login_check" name="checkbox" class="checkbox_login">
-								<label for="login_check" class="remember_me">Remember me</label>
-								<a href="<?= base_url('auth/forgotPassword') ?>" class="forgot_link">Forget password?</a>
+								<label for="login_check" class="remember_me">Ingat saya</label>
+								<a href="<?= base_url('auth/forgotPassword') ?>" class="forgot_link">Lupa password?</a>
 								<input type="submit" value="LOG IN" class="sub_signup">
 							</form>
 							<div class="have_an_acnt">
-								<p>Dont have an account?  <a href="<?= base_url('auth/registration') ?>">Sign up</a></p>
+								<p>Sudah punya akun? <a href="<?= base_url('auth/registration') ?>">Daftar</a></p>
 							</div>
 							<div class="or_line">
 								<span>(OR)</span>
 							</div>
 							<div class="social_links_login">
 								<ul>
-									<li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with facebook</a></li>
-									<li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with Google+</a></li>
+									<li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Masuk dengan facebook</a></li>
+									<li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Masuk dengan Google+</a></li>
 								</ul>
 							</div>
 						</div>
@@ -182,43 +214,43 @@
 					<!-- signup form start -->
 					<div class="popup_alert_main travelite_signup_form">
 						<div class="login_heading">
-							signup
+							Daftar
 							<span class="close_btn"><i class="fa fa-times"></i></span>
 						</div>
 						<div class="popup_inner">
 							<?php $agama = $this->db->get('agama')->result_array(); ?>
 							<form class="signup_form" method="post" action="<?= base_url('auth/registration') ?>">
 								<input type="text" name="name" id="name" placeholder="Nama Lengkap" class="input_login" value="<?= set_value('name') ?>">
-								<?= form_error('name','<small class="text-danger pl-3">','</small>') ?>
-								<input type="email" name="email" id="email" placeholder="Email"  class="input_login" value="<?= set_value('email') ?>">
-								<?= form_error('email','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('name', '<small class="text-danger pl-3">', '</small>') ?>
+								<input type="email" name="email" id="email" placeholder="Email" class="input_login" value="<?= set_value('email') ?>">
+								<?= form_error('email', '<small class="text-danger pl-3">', '</small>') ?>
 								<select name="gender" id="gender" class="input_login" value="<?= set_value('gender') ?>">
 									<option selected disabled value="">Pilih Jenis Kelamin</option>
 									<option value="Laki-laki">Laki-laki</option>
 									<option value="Perempuan">Perempuan</option>
 								</select>
-								<?= form_error('gender','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('gender', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="text" name="place_of_birth" id="place_of_birth" class="input_login" value="<?= set_value('place_of_birth') ?>" placehokder="Tempat Lahir">
-								<?= form_error('place_of_birth','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('place_of_birth', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="text" name="birthday" id="birthday" placeholder="Tanggal Lahir" class="input_login" value="<?= set_value('birthday') ?>">
-								<?= form_error('birthday','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('birthday', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="number" class="input_login" id="phone_number" name="phone_number" placeholder="Nomor Ponsel" value="<?= set_value('phone_number') ?>">
-								<?= form_error('phone_number','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('phone_number', '<small class="text-danger pl-3">', '</small>') ?>
 								<textarea class="input_login" id="address" name="address" rows="3" placeholder="Alamat"><?= set_value('address') ?></textarea>
-								<?= form_error('address','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('address', '<small class="text-danger pl-3">', '</small>') ?>
 								<select class="input_login" name="religion_id" id="religion_id">
 									<option value="">Pilih Agama</option>
-									<?php foreach ($agama as $row): ?>
+									<?php foreach ($agama as $row) : ?>
 										<option value="<?= $row['id'] ?>"><?= $row['agama'] ?></option>
 									<?php endforeach ?>
 								</select>
-								<?= form_error('religion_id','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('religion_id', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="password" name="password1" id="password1" placeholder="Kata Sandi" class="input_login">
-								<?= form_error('password1','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('password1', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="password" name="password2" id="password2" placeholder="Konfirmasi Kata Sandi" class="input_login">
-								<?= form_error('password2','<small class="text-danger pl-3">','</small>') ?>
+								<?= form_error('password2', '<small class="text-danger pl-3">', '</small>') ?>
 								<input type="checkbox" id="signup_check" name="checkbox" class="checkbox_login">
-								<label for="signup_check" class="remember_me">I agree the Terms of Service, Privacy Policy, Guest Refund Policy, and Host Guarantee Terms.</label>
+								<label for="signup_check" class="remember_me">Saya menyetujui Ketentuan Layanan, Kebijakan Privasi, Kebijakan Pengembalian Uang Tamu, dan Ketentuan Jaminan Tuan Rumah.</label>
 								<input type="submit" value="SIGN UP" class="sub_signup">
 							</form>
 							<div class="or_line">
@@ -226,11 +258,11 @@
 							</div>
 							<div class="social_links_login">
 								<ul>
-									<li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Login with facebook</a></li>
-									<li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Login with Google+</a></li>
+									<li class="facebook_login"><a href="#"><i class="fa fa-facebook"></i>Masuk dengan facebook</a></li>
+									<li class="gplus_login"><a href="#"><i class="fa fa-google-plus"></i>Masuk dengan Google+</a></li>
 								</ul>
 							</div>
-							<div class="already_member"> already member? <a href="<?= base_url('auth/login') ?>">login here</a></div>
+							<div class="already_member"> Sudah punya akun? <a href="<?= base_url('auth/login') ?>">Masuk disini</a></div>
 						</div>
 					</div>
 					<!-- signup form  End -->
@@ -249,36 +281,36 @@
 				<div class="col-md-10 col-sm-10"> <a href="javascript:;" class="menu-toggle"></a>
 					<div class="main_menu">
 						<ul>
-							<?php 
+							<?php
 							if (!$this->session->userdata('email')) {
 								$this->db->where('login', 0);
 							}
 							$this->db->order_by('id', 'ASC');
 							$menu = $this->db->get_where('haifa_menu', ['active' => 1])->result_array();
-							 ?>
-							<?php foreach ($menu as $m): ?>
-								<?php 
+							?>
+							<?php foreach ($menu as $m) : ?>
+								<?php
 								if ($m['dropdown'] == 0) {
-									$url = base_url().$m['url'];
-								} else{
+									$url = base_url() . $m['url'];
+								} else {
 									$url = '#';
 								}
 								?>
-								<?php 
-								if ($link == $m['menu']){
+								<?php
+								if ($link == $m['menu']) {
 									$active = 'active';
-								} else{
+								} else {
 									$active = '';
 								}
 								?>
 								<li class="<?= $active ?>">
 									<a href="<?= $url ?>"><?= $m['menu'] ?></a>
-									<?php if ($m['dropdown'] == 1): ?>
+									<?php if ($m['dropdown'] == 1) : ?>
 										<ul class="sub-menu">
 											<?php
-											$submenu = $this->db->get_where('haifa_sub_menu', ['menu_id' => $m['id'], 'is_active' => 1])->result_array(); 
+											$submenu = $this->db->get_where('haifa_sub_menu', ['menu_id' => $m['id'], 'is_active' => 1])->result_array();
 											?>
-											<?php foreach ($submenu as $sm): ?>
+											<?php foreach ($submenu as $sm) : ?>
 												<li><a href="<?= base_url($sm['url']); ?>"><?= $sm['title'] ?></a></li>
 											<?php endforeach ?>
 										</ul>

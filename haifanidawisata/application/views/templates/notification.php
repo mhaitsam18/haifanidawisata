@@ -18,7 +18,7 @@ $notifikasi_unread = $this->db->get_where('notifikasi', ['id_user' => $user['id'
 	<!-- Dropdown - Alerts -->
 	<div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown" style="width: 400px;">
 		<h6 class="dropdown-header">
-			Alerts Center
+			Pusat Notifikasi
 			<a href="" class="forgot_link" style="color: #A3D0EF;" onclick="notifikasi()">
 				Tandai Semua Sudah dibaca
 			</a>
@@ -69,6 +69,6 @@ $notifikasi_unread = $this->db->get_where('notifikasi', ['id_user' => $user['id'
 				<span class="font-weight-bold" style="color: black; margin-top: 0px;">A new monthly report is ready to download!</span>
 			</div>
 		</a> -->
-		<a class="dropdown-item text-center btn btn-link" style="color: black;" href="#">Show All Alerts</a>
+		<a class="dropdown-item text-center btn btn-link" style="color: black;" href="#">Lihat Semua Notifikasi</a>
 	</div>
 </li>

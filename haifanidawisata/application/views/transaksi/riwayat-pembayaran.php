@@ -122,9 +122,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="middle_text full_width">
-				<h2>Get up to 20% Offer</h2>
-				<h5>On Booking Flights Along with Tour Packages</h5>
-				<div class="coupon_offer"> Use Coupon Code: <span>FLI20</span> </div>
+				<h2>Dapatkan hingga 20% Penawaran</h2>
+				<h5>Tentang Pemesanan Penerbangan Bersama dengan Paket Wisata</h5>
+				<div class="coupon_offer"> Gunakan kode kupon: <span>FLI20</span> </div>
 			</div>
 		</div>
 	</div>

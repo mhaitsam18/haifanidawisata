@@ -2,7 +2,7 @@
 	<!--page title Start-->
 	<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(<?= base_url('assets/') ?>images/bg/page_title_bg.jpg);">
 		<ul>
-			<li><a href="javascript:;">My Account</a></li>
+			<li><a href="javascript:;">Akun Saya</a></li>
 		</ul>
 	</div>
 	<!--page title end-->
@@ -22,17 +22,17 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="name" class="col-sm-2 col-form-label">Name</label>
+							<label for="name" class="col-sm-2 col-form-label">Nama</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" id="name" name="name" value="<?= $user['name'] ?>">
 								<?= form_error('name','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="gender" class="col-sm-2 col-form-label">Gender</label>
+							<label for="gender" class="col-sm-2 col-form-label">Jenis Kelamin</label>
 							<div class="col-sm-10">
 								<select class="form-control" name="gender" id="gender">
-									<option>Select Gender</option>
+									<option>Pilih Jenis Kelamin</option>
 									<?php if ($user['gender'] == 'Laki-laki'): ?>
 										<option value="Laki-laki" selected>Laki-laki</option>
 										<option value="Perempuan">Perempuan</option>
@@ -45,31 +45,31 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="place_of_birth" class="col-sm-2 col-form-label">Place of Birth</label>
+							<label for="place_of_birth" class="col-sm-2 col-form-label">Tempat Lahir</label>
 							<div class="col-sm-10">
 								<input type="text" class="form-control" id="place_of_birth" name="place_of_birth" value="<?= $user['place_of_birth'] ?>">
 								<?= form_error('place_of_birth','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="birthday" class="col-sm-2 col-form-label">Birth Day</label>
+							<label for="birthday" class="col-sm-2 col-form-label">Tanggal Lahir</label>
 							<div class="col-sm-10">
 								<input type="date" class="form-control" id="birthday" name="birthday" value="<?= $user['birthday'] ?>">
 								<?= form_error('birthday','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="phone_number" class="col-sm-2 col-form-label">Phone Number</label>
+							<label for="phone_number" class="col-sm-2 col-form-label">Nomor Telpon</label>
 							<div class="col-sm-10">
 								<input type="number" class="form-control" id="phone_number" name="phone_number" value="<?= $user['phone_number'] ?>">
 								<?= form_error('phone_number','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="religion_id" class="col-sm-2 col-form-label">Religion</label>
+							<label for="religion_id" class="col-sm-2 col-form-label">Agama</label>
 							<div class="col-sm-10">
 								<select class="form-control" name="religion_id" id="religion_id">
-									<option value="">Select Religion</option>
+									<option value="">Pilih Agama</option>
 									<?php foreach ($agama as $row): ?>
 										<?php if ($row['agama']== $user['agama']): ?>
 											<option value="<?= $row['id'] ?>" selected>
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 						<div class="form-group row">
-							<label for="address" class="col-sm-2 col-form-label">Address</label>
+							<label for="address" class="col-sm-2 col-form-label">Alamat</label>
 							<div class="col-sm-10">
 								<textarea class="form-control" id="address" name="address" rows="3" placeholder="Address"><?= $user['address'] ?></textarea>
 								<?= form_error('address','<small class="text-danger pl-3">','</small>') ?>
@@ -110,7 +110,7 @@
 									<div class="col-sm-9">
 										<div class="custom-file">
 											<input type="file" class="custom-file-input" id="image" name="image">
-											<label class="custom-file-label" for="image">Choose file</label>
+											<label class="custom-file-label" for="image">Pilih file</label>
 										</div>
 									</div>
 								</div>
@@ -118,32 +118,32 @@
 						</div>
 						<div class="form-group row">
 							<div class="col-sm">
-								<button type="submit" class="btn btn-primary float-right">Save</button>
+								<button type="submit" class="btn btn-primary float-right">Simpan</button>
 							</div>
 						</div>
-						<button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteAccountModal">Delete Account</button>
+						<button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#deleteAccountModal">Hapus Akun</button>
 					</form>
 				</div>
 				<div class="col-lg-5">
 					<form action="<?= base_url('user/changePassword') ?>" method="post">
 						<div class="form-group">
-							<label for="current_password">Current Password</label>
+							<label for="current_password">Password Lama</label>
 							<input type="password" class="form-control" id="current_password" name="current_password">
 							<?= form_error('current_password','<small class="text-danger pl-3">','</small>') ?>
 						</div>
 						<div class="form-group">
-							<label for="new_password1">New Password</label>
+							<label for="new_password1">Password Baru</label>
 							<input type="password" class="form-control" id="new_password1" name="new_password1">
 							<?= form_error('new_password1','<small class="text-danger pl-3">','</small>') ?>
 						</div>
 						<div class="form-group">
-							<label for="new_password2">Repeat Password</label>
+							<label for="new_password2">Ulangi Password Baru</label> 
 							<input type="password" class="form-control" id="new_password2" name="new_password2">
 							<?= form_error('new_password2','<small class="text-danger pl-3">','</small>') ?>
 						</div>
 						<div class="form-group">
 							<button type="submit" class="btn btn-primary">
-								Change Password
+								Ubah Password
 							</button>
 						</div>
 					</form>
@@ -152,9 +152,9 @@
 						$pk = $pertanyaan_keamanan->row_array(); ?>
 						<form action="<?= base_url('user/keamanan') ?>" method="post" enctype="multipart/form-data">
 							<div class="form-group">
-								<label for="id_pertanyaan_1">Question 1</label>
+								<label for="id_pertanyaan_1">Pertanyaan 1</label>
 								<select class="form-control" id="id_pertanyaan_1" name="id_pertanyaan_1" value="<?= $pk['id_pertanyaan_1'] ?>">
-									<option selected disabled value="">Select Question 1</option>
+									<option selected disabled value="">Pilih Pertanyaan 1</option>
 									<?php foreach ($pertanyaan_1 as $option): ?>
 										<?php if ($option['id']==$pk['id_pertanyaan_1']): ?>
 											<option value="<?= $option['id'] ?>" selected><?= $option['pertanyaan'] ?></option>
@@ -166,14 +166,14 @@
 								<?= form_error('id_pertanyaan_1','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
-								<label for="jawaban_1">Answer</label>
+								<label for="jawaban_1">Jawaban</label>
 								<input type="text" class="form-control" id="jawaban_1" name="jawaban_1" value="<?= $pk['jawaban_1'] ?>">
 								<?= form_error('jawaban_1','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
-								<label for="id_pertanyaan_2">Question 2</label>
+								<label for="id_pertanyaan_2">Pertanyaan 2</label>
 								<select class="form-control" id="id_pertanyaan_2" name="id_pertanyaan_2" value="<?= $pk['id_pertanyaan_2'] ?>">
-									<option disabled value="">Select Question 2</option>
+									<option disabled value="">Pilih Pertanyaan 2</option>
 									<?php foreach ($pertanyaan_2 as $option): ?>
 										<?php if ($option['id']==$pk['id_pertanyaan_2']): ?>
 											<option value="<?= $option['id'] ?>" selected><?= $option['pertanyaan'] ?></option>
@@ -185,13 +185,13 @@
 								<?= form_error('id_pertanyaan_2','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
-								<label for="jawaban_2">Answer</label>
+								<label for="jawaban_2">Jawaban</label>
 								<input type="text" class="form-control" id="jawaban_2" name="jawaban_2" value="<?= $pk['jawaban_2'] ?>">
 								<?= form_error('jawaban_2','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
 								<div class="col-sm">
-									<button type="submit" class="btn btn-primary float-right">Save</button>
+									<button type="submit" class="btn btn-primary float-right">Simpan</button>
 								</div>
 							</div>
 						</form>
@@ -200,9 +200,9 @@
 						?>
 						<form action="<?= base_url('user/keamanan') ?>" method="post" enctype="multipart/form-data">
 							<div class="form-group">
-								<label for="id_pertanyaan_1">Question 1</label>
+								<label for="id_pertanyaan_1">Pertanyaan 1</label>
 								<select class="form-control" id="id_pertanyaan_1" name="id_pertanyaan_1">
-									<option selected disabled value="">Select Question 1</option>
+									<option selected disabled value="">Pilih Pertanyaan 1</option>
 									<?php foreach ($pertanyaan_1 as $option): ?>
 										<option value="<?= $option['id'] ?>"><?= $option['pertanyaan'] ?></option>
 									<?php endforeach ?>
@@ -210,14 +210,14 @@
 								<?= form_error('id_pertanyaan_1','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
-								<label for="jawaban_1">Answer</label>
+								<label for="jawaban_1">Jawaban</label>
 								<input type="text" class="form-control" id="jawaban_1" name="jawaban_1">
 								<?= form_error('jawaban_1','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
 								<label for="id_pertanyaan_2">Pertanyaan 2</label>
 								<select class="form-control" id="id_pertanyaan_2" name="id_pertanyaan_2">
-									<option selected disabled value="">Select Question 2</option>
+									<option selected disabled value="">Pilih Pertanyaan 2</option>
 									<?php foreach ($pertanyaan_2 as $option): ?>
 										<option value="<?= $option['id'] ?>"><?= $option['pertanyaan'] ?></option>
 									<?php endforeach ?>
@@ -225,13 +225,13 @@
 								<?= form_error('id_pertanyaan_2','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
-								<label for="jawaban_2">Answer</label>
+								<label for="jawaban_2">Jawaban</label>
 								<input type="text" class="form-control" id="jawaban_2" name="jawaban_2">
 								<?= form_error('jawaban_2','<small class="text-danger pl-3">','</small>') ?>
 							</div>
 							<div class="form-group">
 								<div class="col-sm">
-									<button type="submit" class="btn btn-primary float-right">Save</button>
+									<button type="submit" class="btn btn-primary float-right">Simpan</button>
 								</div>
 							</div>
 						</form>
@@ -249,7 +249,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="deleteAccountModalLabel">Are You Sure?</h5>
+				<h5 class="modal-title" id="deleteAccountModalLabel">Apakah anda yakin?</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -263,8 +263,8 @@
 					</div>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-danger">Delete</button>
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+					<button type="submit" class="btn btn-danger">Hapus</button>
 				</div>
 			</form>
 		</div>

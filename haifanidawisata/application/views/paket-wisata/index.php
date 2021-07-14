@@ -2,7 +2,7 @@
 	<!--page title Start-->
 	<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(<?= base_url('assets/') ?>images/bg/page_title_bg.jpg);">
 		<ul>
-			<li><a href="javascript:;">Tour Destination</a></li>
+			<li><a href="javascript:;">Tujuan Wisata</a></li>
 		</ul>
 	</div>
 	<!--page title end-->
@@ -19,7 +19,7 @@
 							</form>
 						</div>
 						<aside class="widget destination_widget">
-							<h4 class="widget-title">choose destination</h4>
+							<h4 class="widget-title">pilih tujuan</h4>
 							<div class="travel_checkbox_round list_destination">
 								<?php foreach ($destinasi as $item): ?>
 									<input type="checkbox" name="destinasi" id="choose_destination_<?= $item['id'] ?>" value=".dest_<?= $item['id'] ?>">
@@ -46,17 +46,17 @@
 							</div>
 						</aside>
 						<aside class="widget widget_filter">
-							<h4 class="widget-title">filter by price</h4>
+							<h4 class="widget-title">filter berdasarkan harga</h4>
 							<div class="price_filter_slider">
 								<div id="slider"></div>
 								<p class="range_text">
-									<label for="amount">Price range:</label>
+									<label for="amount">Kisaran harga:</label>
 									<input type="text" id="amount" readonly style="width: 200px;">
 								</p>
 							</div>
 						</aside>
 						<aside class="widget category_widget">
-							<h4 class="widget-title">categories</h4>
+							<h4 class="widget-title">Kategori</h4>
 							<div class="travel_checkbox_round list_kategori_wisata">
 								<?php foreach ($kategori_wisata as $item): ?><input type="checkbox" name="kategori_wisata" id="choose_kategori_wisata_<?= $item['id'] ?>" value=".kat_<?= $item['id'] ?>">
 									<label for="choose_kategori_wisata_<?= $item['id'] ?>"><?= $item['kategori_wisata'] ?></label>
@@ -164,7 +164,7 @@
 						<div class="full_width sorting_panel">
 							<div class="sorting_destination">
 								<select class="form-control selectpicker" id="search_rooms">
-									<option value="jumlah_terpesan">Sort by : Popularity</option>
+									<option value="jumlah_terpesan">Urutkan berdasarkan : Pupularitas</option>
 									<?php 
 									$p = 1;
 									while ($p <= $count_page) { ?>
@@ -177,7 +177,7 @@
 							</div>
 							<div class="sorting_destination">
 								<select class="form-control selectpicker" id="search_places">
-									<option value="tanggal_keberangkatan">Sort by: Departure's Date</option>
+									<option value="tanggal_keberangkatan">Urutkan berdasarkan: Tanggal Berangkatan</option>
 									<?php 
 									$d = 1;
 									while ($d <= $count_page) { ?>
@@ -190,7 +190,7 @@
 							</div>
 							<div class="sorting_destination">
 								<select class="form-control selectpicker" id="search_prices">
-									<option value="harga_paket">Sort by : Price</option>
+									<option value="harga_paket">Urutkan berdasarkan : Harga</option>
 									<?php 
 									$h = 1;
 									while ($h <= $count_page) { ?>

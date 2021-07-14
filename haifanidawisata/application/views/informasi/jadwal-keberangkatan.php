@@ -16,7 +16,7 @@
 						<div class="tour_heading">
 							<h4>Jadwal Keberangkatan</h4>
 						</div>
-						<p class="more_text">There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsu available, but the joy have suffered alteration in some format,by injected humour users Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+						<!-- <p class="more_text">There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsu available, but the joy have suffered alteration in some format,by injected humour users Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> -->
 					</div>
 					<div class="full_width sorting_places_section">
 						<div id="ctn">

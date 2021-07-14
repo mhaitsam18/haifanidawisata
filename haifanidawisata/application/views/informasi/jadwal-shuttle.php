@@ -1,5 +1,5 @@
 <!--content body start-->
-<div id="content_wrapper"> 
+<div id="content_wrapper">
 	<!--page title start-->
 	<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(<?= base_url('assets/') ?>images/bg/page_title_bg.jpg);">
 		<ul>
@@ -16,18 +16,18 @@
 						<div class="tour_heading">
 							<h4>Jadwal Keberangkatan</h4>
 						</div>
-						<p class="more_text">There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsu available, but the joy have suffered alteration in some format,by injected humour users Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+						<!-- <p class="more_text">There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour. There are many variations of passages of Lorem Ipsu available, but the joy have suffered alteration in some format,by injected humour users Lorem Ipsum is simply dummy text of the printing and typesetting industry</p> -->
 					</div>
 					<div class="full_width sorting_panel">
 						<div class="sorting_destination">
 							<select class="form-control selectpicker" id="pilih" name="keberangkatan" id="keberangkatan">
-								<option value="">Point Departure</option>
-								<?php 
+								<option value="">Titik Keberangkatan</option>
+								<?php
 								foreach ($keberangkatan as $row) {
 									$keberangkatan = $row['keberangkatan'];
-									?>
+								?>
 									<option value="<?= "$keberangkatan"; ?>"><?= "$keberangkatan"; ?></option>
-									<?php
+								<?php
 								}
 								?>
 							</select>
@@ -48,7 +48,7 @@
 									</thead>
 									<tbody>
 										<?php
-										$no=1;
+										$no = 1;
 										foreach ($tiket_shuttle as $row) { ?>
 											<tr>
 												<td><?php echo $no; ?></td>
@@ -56,7 +56,7 @@
 												<td><?php echo $row['tujuan']; ?></td>
 												<td><?php echo $row['jadwal']; ?></td>
 											</tr>
-											<?php
+										<?php
 											$no++;
 										} ?>
 									</tbody>
@@ -64,31 +64,32 @@
 							</div>
 						</div>
 					</div>
+					<br>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
-    // ambil elements yg di buutuhkan
-    var keyword = document.getElementById('pilih');
+	// ambil elements yg di buutuhkan
+	var keyword = document.getElementById('pilih');
 
-    var container = document.getElementById('ctn');
+	var container = document.getElementById('ctn');
 
-    // tambahkan event ketika keyword ditulis
+	// tambahkan event ketika keyword ditulis
 
-    keyword.addEventListener('change', function () {
-        //buat objek ajax
-        var xhr = new XMLHttpRequest();
+	keyword.addEventListener('change', function() {
+		//buat objek ajax
+		var xhr = new XMLHttpRequest();
 
-        // cek kesiapan ajax
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                container.innerHTML = xhr.responseText;
-            }
-        }
+		// cek kesiapan ajax
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+				container.innerHTML = xhr.responseText;
+			}
+		}
 
-        xhr.open('GET', '<?= base_url('Informasi/list_keberangkatan/') ?>' + keyword.value, true);
-        xhr.send();
-    })
+		xhr.open('GET', '<?= base_url('Informasi/list_keberangkatan/') ?>' + keyword.value, true);
+		xhr.send();
+	})
 </script>

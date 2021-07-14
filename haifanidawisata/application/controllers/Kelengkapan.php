@@ -18,9 +18,11 @@ class Kelengkapan extends CI_Controller {
 		$data['link'] = 'Kelengkapan';
 		$data['kelengkapan'] = $this->db->get('kelengkapan')->result_array();
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-		$this->db->select('*, jamaah.id AS idj');
+		$this->db->select("id_paket_wisata,paket_wisata.nama_paket,paket_wisata.tanggal_keberangkatan");
+		// $this->db->select('*, jamaah.id AS idj');
 		$this->db->join('paket_wisata', 'jamaah.id_paket_wisata = paket_wisata.id');
-		$this->db->group_by('id_paket_wisata');
+		// $this->db->group_by(['kode_bayar',"DATE_FORMAT(waktu_pemesanan,'%Y-%m-%d')"]);
+		$this->db->group_by(['id_paket_wisata']);
 		$this->db->order_by('tanggal_keberangkatan', 'DESC');
 		$data['jamaah_by_paket'] = $this->db->get_where('jamaah', ['id_pemesan' => $data['user']['id']])->result_array();
 		$this->load->view('templates/header', $data);

@@ -83,10 +83,10 @@ function acak($panjang){
 
 function base_url2($value='')
 {
-    return 'http://localhost/haifanidawisata/'.$value;
+    return "http://".$_SERVER['HTTP_HOST']."/haifanidawisata/".$value;
 }
 
 function base_url3($value='')
 {
-    return 'http://localhost/haifanidaagen/'.$value;
+    return "http://".$_SERVER['HTTP_HOST']."/haifanidaagen/".$value;
 }

@@ -1,11 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Transaksi extends CI_Controller {
+class Transaksi extends CI_Controller
+{
 
 	public function __construct()
 	{
-		parent:: __construct();
+		parent::__construct();
 		is_logged_in();
 		$this->load->library('form_validation');
 		$this->load->model('Transaksi_model');
@@ -21,18 +22,18 @@ class Transaksi extends CI_Controller {
 		if ($this->input->post('keyword')) {
 			$data['keyword'] = $this->input->post('keyword');
 			$this->session->set_userdata('keyword', $data['keyword']);
-		} else{
+		} else {
 			$data['keyword'] = $this->session->set_userdata('keyword');
 		}
 		if ($this->input->post('kategori')) {
 			if ($this->input->post('kategori') != 'All Category') {
 				$data['pilih_kategori'] = $this->input->post('kategori');
 				$this->session->set_userdata('pilih_kategori', $data['pilih_kategori']);
-			} else{
+			} else {
 				$data['pilih_kategori'] = null;
 				$this->session->set_userdata('pilih_kategori', $data['pilih_kategori']);
 			}
-		} else{
+		} else {
 			$data['pilih_kategori'] = $this->session->userdata('pilih_kategori');
 		}
 		$this->db->like('nama_produk', $data['keyword']);
@@ -55,34 +56,34 @@ class Transaksi extends CI_Controller {
 		$config['last_tag_open'] = '<li class="page-item">';
 		$config['last_tag_close'] = '</li>';
 
-		if ($config['total_rows']-$this->uri->segment(3)>7) {
-		  $config['next_link'] = '&raquo';
-		} else{
-		  $config['next_link'] = 'Next';
+		if ($config['total_rows'] - $this->uri->segment(3) > 7) {
+			$config['next_link'] = '&raquo';
+		} else {
+			$config['next_link'] = 'Next';
 		}
 		$config['next_tag_open'] = '
 								<li class="page-item">';
 		$config['next_tag_close'] = '</li>';
 
-		if ($this->uri->segment(3)>7) {
-		  $config['prev_link'] = '&laquo';
-		} else{
-		  $config['prev_link'] = 'Prev';
+		if ($this->uri->segment(3) > 7) {
+			$config['prev_link'] = '&laquo';
+		} else {
+			$config['prev_link'] = 'Prev';
 		}
 		$config['prev_tag_open'] = '<li class="page-item">';
 		$config['prev_tag_close'] = '</li>';
 		if (empty($this->uri->segment(3))) {
 			$prev = '<li class="page-item disabled"><span class="page-link">Prev</span></li>';
 			$next = '';
-		} elseif ($config['total_rows']-$this->uri->segment(3)<3) {
+		} elseif ($config['total_rows'] - $this->uri->segment(3) < 3) {
 			$prev = '';
 			$next = '<li class="page-item disabled"><span class="page-link">Next</span></li>';
 		} else {
 			$next = '';
 			$prev = '';
 		}
-		$config['cur_tag_open'] = $prev.'<li class="page-item active" aria-current="page"><span class="page-link">';
-		$config['cur_tag_close'] = '</span></li>'.$next;
+		$config['cur_tag_open'] = $prev . '<li class="page-item active" aria-current="page"><span class="page-link">';
+		$config['cur_tag_close'] = '</span></li>' . $next;
 
 		$config['num_tag_open'] = '<li class="page-item">';
 		$config['num_tag_close'] = '</li>';
@@ -91,7 +92,7 @@ class Transaksi extends CI_Controller {
 
 		$this->pagination->initialize($config);
 		$data['start'] = $this->uri->segment(3);
-		$data['produk'] = $this->Produk_model->getProdukByLimit($config['per_page'],$data['start'], $data['keyword'], $data['pilih_kategori']);
+		$data['produk'] = $this->Produk_model->getProdukByLimit($config['per_page'], $data['start'], $data['keyword'], $data['pilih_kategori']);
 		$data['kategori'] = $this->db->get('kategori')->result_array();
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
@@ -119,7 +120,7 @@ class Transaksi extends CI_Controller {
 				redirect('Transaksi/');
 			}
 		} elseif ($produk['stok'] <= 0) {
-				$this->session->set_flashdata('flash_gagal', 'Mohon Maaf, Stok produk tidak mencukupi!');
+			$this->session->set_flashdata('flash_gagal', 'Mohon Maaf, Stok produk tidak mencukupi!');
 			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
 				Mohon Maaf, Stok produk tidak mencukupi!
 				</div>');
@@ -134,38 +135,38 @@ class Transaksi extends CI_Controller {
 			}
 		}
 		$data = array(
-	        'id'      => $produk['id'],
-	        'qty'     => 1,
-	        'price'   => $produk['harga_jual'],
-	        'name'    => $produk['nama_produk'],
-	        'gambar'    => $produk['gambar']
-	        // 'options' => array('Size' => 'L', 'Color' => 'Red')
-    	);
-    	$this->cart->insert($data);
-    	var_dump($produk);
-    	redirect('Transaksi/');
+			'id'      => $produk['id'],
+			'qty'     => 1,
+			'price'   => $produk['harga_jual'],
+			'name'    => $produk['nama_produk'],
+			'gambar'    => $produk['gambar']
+			// 'options' => array('Size' => 'L', 'Color' => 'Red')
+		);
+		$this->cart->insert($data);
+		var_dump($produk);
+		redirect('Transaksi/');
 	}
 
 	public function kurangKeranjang($rowid, $qty)
 	{
 		$data = array(
-	        'rowid' => $rowid,
-	        'qty'   => ($qty-1)
-	    );
-	    var_dump($data);
+			'rowid' => $rowid,
+			'qty'   => ($qty - 1)
+		);
+		var_dump($data);
 		$this->cart->update($data);
-    	redirect('Transaksi/');
+		redirect('Transaksi/');
 	}
 	public function bersihkanKeranjang()
 	{
 		$this->cart->destroy();
-    	redirect('Transaksi/');
+		redirect('Transaksi/');
 	}
 
 	public function hapusItem($rowid)
 	{
 		$this->cart->remove($rowid);
-    	redirect('Transaksi/');
+		redirect('Transaksi/');
 	}
 
 	public function checkout()
@@ -185,10 +186,10 @@ class Transaksi extends CI_Controller {
 				'catatan' => $catatan
 			);
 			$this->db->insert('transaksi', $data);
-			$produk = $this->db->get_where('produk',['id' => $item['id']])->row_array();
+			$produk = $this->db->get_where('produk', ['id' => $item['id']])->row_array();
 			$new_stok = $produk['stok'] - $item['qty'];
 			$this->db->where('id', $item['id']);
-			$this->db->update('produk',['stok' => $new_stok]);
+			$this->db->update('produk', ['stok' => $new_stok]);
 		}
 		$this->cart->destroy();
 		$this->session->set_flashdata('flash', 'Berhasil');
@@ -224,12 +225,12 @@ class Transaksi extends CI_Controller {
 
 		$this->db->join('produk', 'produk.id = pesanan.id_produk');
 		$data['pesanan'] = $this->db->get_where('pesanan', ['id_checkout' => $id])->result_array();
-		
+
 		$this->db->select('*, bukti_transfer.id AS idbt, bukti_transfer.status AS sbt');
 		$this->db->join('checkout', 'bukti_transfer.id_checkout = checkout.id');
 		$this->db->join('user', 'checkout.id_user = user.id');
 		$this->db->join('rekening', 'bukti_transfer.id_rekening_tujuan = rekening.id');
-		$data['bukti_transfer'] = $this->db->get_where('bukti_transfer',['id_checkout' => $id])->result_array();
+		$data['bukti_transfer'] = $this->db->get_where('bukti_transfer', ['id_checkout' => $id])->result_array();
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
 		$this->load->view('templates/topbar', $data);
@@ -273,10 +274,11 @@ class Transaksi extends CI_Controller {
 	{
 		$data['title'] = "Pembayaran Paket";
 		$data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
-		$this->db->select('*, bukti_pembayaran_paket.id AS idbt, bukti_pembayaran_paket.status AS sbt');
-		$this->db->join('jamaah', 'bukti_pembayaran_paket.id_jamaah = jamaah.id');
+		$this->db->select('bukti_pembayaran_paket.*,user.*,rekening.*, bukti_pembayaran_paket.id AS idbt, bukti_pembayaran_paket.status AS sbt');
+		$this->db->join('jamaah', 'bukti_pembayaran_paket.kode_bayar = jamaah.kode_bayar');
 		$this->db->join('user', 'jamaah.id_pemesan = user.id');
 		$this->db->join('rekening', 'bukti_pembayaran_paket.id_rekening_tujuan = rekening.id');
+		$this->db->group_by('bukti_pembayaran_paket.kode_bayar');
 		$data['bukti_pembayaran_paket'] = $this->db->get('bukti_pembayaran_paket')->result_array();
 		$this->load->view('templates/header', $data);
 		$this->load->view('templates/sidebar', $data);
@@ -288,7 +290,7 @@ class Transaksi extends CI_Controller {
 	public function updateStatusPesanan($id, $status = '')
 	{
 		$this->db->where('id', $id);
-		$this->db->update('checkout', ['status' => 'Pesanan '.$status]);
+		$this->db->update('checkout', ['status' => 'Pesanan ' . $status]);
 		if ($status == 'lunas') {
 			$this->db->where('id', $id);
 			$this->db->update('checkout', ['status' => 'Sudah dibayar']);
@@ -296,15 +298,15 @@ class Transaksi extends CI_Controller {
 		if ($status == 'dibatalkan') {
 			$pesanan = $this->db->get_where('pesanan', ['id_checkout' => $id])->result_array();
 			foreach ($pesanan as $row) {
-				$produk = $this->db->get_where('produk',['id' => $row['id_produk']])->row_array();
+				$produk = $this->db->get_where('produk', ['id' => $row['id_produk']])->row_array();
 				$new_stok = $produk['stok'] + $row['jumlah'];
 				$this->db->where('id', $row['id_produk']);
-				$this->db->update('produk',['stok' => $new_stok]);
+				$this->db->update('produk', ['stok' => $new_stok]);
 			}
 		}
-		$this->session->set_flashdata('flash', 'Telah '.$status);
+		$this->session->set_flashdata('flash', 'Telah ' . $status);
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-			Pesanan telah '.$status.'
+			Pesanan telah ' . $status . '
 			</div>');
 		redirect('Transaksi/online');
 	}
@@ -312,15 +314,15 @@ class Transaksi extends CI_Controller {
 	public function updateStatusPembayaran($id, $status = '')
 	{
 		$this->db->where('id', $id);
-		$this->db->update('bukti_transfer', ['status' => 'Pembayaran '.$status]);
+		$this->db->update('bukti_transfer', ['status' => 'Pembayaran ' . $status]);
 		if ($status == 'valid') {
 			$bukti_transfer = $this->db->get_where('bukti_transfer', ['id' => $id])->row_array();
 			$this->db->where('id', $bukti_transfer['id_checkout']);
 			$this->db->update('checkout', ['status' => 'Sudah dibayar']);
 		}
-		$this->session->set_flashdata('flash', 'Telah '.$status);
+		$this->session->set_flashdata('flash', 'Telah ' . $status);
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-			Pembayaran telah '.$status.'
+			Pembayaran telah ' . $status . '
 			</div>');
 		redirect('Transaksi/pembayaranOnline');
 	}
@@ -328,26 +330,32 @@ class Transaksi extends CI_Controller {
 	public function updateStatusPembayaranPaket($id, $status = '')
 	{
 		$this->db->where('id', $id);
-		$this->db->update('bukti_pembayaran_paket', ['status' => 'Pembayaran '.$status]);
+		$this->db->update('bukti_pembayaran_paket', ['status' => 'Pembayaran ' . str_replace('%20',' ',$status)]);
 		if ($status == 'valid') {
 			$bukti_pembayaran_paket = $this->db->get_where('bukti_pembayaran_paket', ['id' => $id])->row_array();
-			$jamaah = $this->db->get_where('jamaah', ['id' => $bukti_pembayaran_paket['id_jamaah']])->row_array();
-			$new_total_bayar = $jamaah['total_bayar'] + $bukti_pembayaran_paket['nominal_transfer'];
+			$jamaah = $this->db->get_where('jamaah', ['kode_bayar' => $bukti_pembayaran_paket['kode_bayar']])->result_array();
+			// echo "<pre>";
+			// print_r($bukti_pembayaran_paket);
+			// echo "<pre>";
+			// print_r($jamaah);
+			// dasdas da
+			for ($i = 0; $i < count($jamaah); $i++) {
+				$new_total_bayar = $jamaah[$i]['total_bayar'] + $bukti_pembayaran_paket['nominal_transfer'];
 
-			$this->db->where('id', $bukti_pembayaran_paket['id_jamaah']);
-			$this->db->update('jamaah', ['total_bayar' => $new_total_bayar]);
+				$this->db->where('id', $jamaah[$i]['id']);
+				$this->db->update('jamaah', ['total_bayar' => $new_total_bayar]);
 
-			$new_jamaah = $this->db->get_where('jamaah', ['id' => $jamaah['id']])->row_array();
+				$new_jamaah = $this->db->get_where('jamaah', ['id' => $jamaah[$i]['id']])->row_array();
 
-			if ($new_jamaah['total_bayar'] >= $new_jamaah['total_tagihan']) {
-				$this->db->where('id', $bukti_pembayaran_paket['id_jamaah']);
-				$this->db->update('jamaah', ['status' => 'Sudah Lunas']);
+				if ($new_jamaah['total_bayar'] >= $new_jamaah['total_tagihan']) {
+					$this->db->where('id', $jamaah[$i]['id']);
+					$this->db->update('jamaah', ['status' => 'Sudah Lunas']);
+				}
 			}
-			
 		}
-		$this->session->set_flashdata('flash', 'Telah '.$status);
+		$this->session->set_flashdata('flash', 'Telah ' . $status);
 		$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
-			Pembayaran telah '.$status.'
+			Pembayaran telah ' . $status . '
 			</div>');
 		redirect('Transaksi/pembayaranPaket');
 	}
@@ -366,7 +374,7 @@ class Transaksi extends CI_Controller {
 			$this->load->view('templates/topbar', $data);
 			$this->load->view('transaksi/beban', $data);
 			$this->load->view('templates/footer');
-		} else{
+		} else {
 			$this->db->insert('beban', [
 				'nama_beban' => $this->input->post('nama_beban'),
 				'biaya_beban' => $this->input->post('biaya_beban'),
@@ -386,7 +394,7 @@ class Transaksi extends CI_Controller {
 		$this->form_validation->set_rules('tanggal', 'Transaction Date', 'trim|required');
 		if ($this->form_validation->run() == false) {
 			redirect('Transaksi/beban');
-		} else{
+		} else {
 			$this->db->where('id', $this->input->post('id'));
 			$this->db->update('beban', [
 				'nama_beban' => $this->input->post('nama_beban'),
@@ -399,7 +407,7 @@ class Transaksi extends CI_Controller {
 			redirect('Transaksi/beban');
 		}
 	}
-	
+
 	public function deleteBeban($id)
 	{
 		$this->db->delete('beban', ['id' => $id]);
@@ -409,8 +417,8 @@ class Transaksi extends CI_Controller {
 		redirect('Transaksi/beban');
 	}
 
-	public function getUpdateBeban(){
+	public function getUpdateBeban()
+	{
 		echo json_encode($this->Transaksi_model->getBebanById($this->input->post('id')));
 	}
-	
 }

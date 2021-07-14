@@ -4,7 +4,7 @@
     <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/') ?>ContactFrom_v8/css/main.css"> -->
 	<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(<?= base_url('assets/') ?>images/bg/page_title_bg.jpg);">
 		<ul>
-			<li><a href="javascript:;">contact us</a></li>
+			<li><a href="javascript:;">Hubungi Kami</a></li>
 		</ul>
 	</div>
 	<!--page title end-->
@@ -38,7 +38,7 @@
 							<label>Upload Gambar</label>
 							<input type="file" name="bukti" id="bukti" class="input_c">
 							<?= form_error('bukti','<small class="text-danger pl-3">','</small>') ?>
-							<input type="submit" value="Send" class="btn_green" id="form_submit">
+							<input type="submit" value="Kirim" class="btn_green" id="form_submit">
 						</form>
 					</div>
 				</div>
@@ -94,28 +94,28 @@
 							<div class="social_box facebook_b_wrap">
 								<a href="#"><i class="fa fa-facebook-square"></i></a>
 								<div class="social_likes">30000</div>
-								<div class="shares_and_likes">shares & Likes</div>
+								<div class="shares_and_likes">bagikan & suka</div>
 							</div>
 							<!-- facebook squre End -->
 							<!-- twitter squre start -->
 							<div class="social_box twitter_b_wrap">
 								<a href="#"><i class="fa fa-twitter-square"></i></a>
 								<div class="social_likes">9000</div>
-								<div class="shares_and_likes">followers</div>
+								<div class="shares_and_likes">pengikut</div>
 							</div>
 							<!-- twitter squre End -->
 							<!-- RSS squre start -->
 							<div class="social_box rss_b_wrap">
 								<a href="#"><i class="fa fa-rss-square"></i></a>
 								<div class="social_likes">15000</div>
-								<div class="shares_and_likes">subscribers</div>
+								<div class="shares_and_likes">pelanggan</div>
 							</div>
 							<!-- RSS squre End -->
 							<!-- Linkedin squre start -->
 							<div class="social_box linkedin_b_wrap">
 								<a href="#"><i class="fa fa-linkedin-square"></i></a>
 								<div class="social_likes">3200</div>
-								<div class="shares_and_likes">connections</div>
+								<div class="shares_and_likes">koneksi</div>
 							</div>
 							<!-- Linkedin squre End -->
 						</div>

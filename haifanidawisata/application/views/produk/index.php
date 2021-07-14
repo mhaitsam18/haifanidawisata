@@ -15,21 +15,21 @@
 					<div class="travelite_left_sidebar">
 						<div class="sidebar_search_bar">
 							<form action="<?= base_url('Produk/index/') ?>" method="post">
-								<input type="search" name="keyword" placeholder="Search" id="sidebar_search">
+								<input type="search" name="keyword" placeholder="Cari" id="sidebar_search">
 							</form>
 						</div>
 						<aside class="widget widget_filter">
-							<h4 class="widget-title">filter by price</h4>
+							<h4 class="widget-title">filter berdasarkan harga</h4>
 							<div class="price_filter_slider">
 								<div id="slider"></div>
 								<p class="range_text">
-									<label for="amount">Price range:</label>
+									<label for="amount">Kisaran harga:</label>
 									<input type="text" id="amount" readonly style="width: 200px;">
 								</p>
 							</div>
 						</aside>
 						<aside class="widget category_widget">
-							<h4 class="widget-title">categories</h4>
+							<h4 class="widget-title">kategori</h4>
 							<div class="travel_checkbox_round list_kategori">
 								<?php foreach ($kategori as $item): ?>
 									<input type="checkbox" name="kategori" id="choose_kategori_<?= $item['id'] ?>" value=".kat_<?= $item['id'] ?>">
@@ -83,7 +83,7 @@
 						<div class="tour_packages_description">
 							<div class="tour_heading">
 								<h4>Toko Haifa Nida</h4>
-								<span class="packs">(<?= $total_rows ?> Producks Found)</span>
+								<span class="packs">(<?= $total_rows ?> Produk ditemukan)</span>
 							</div>
 							<?php if ($this->cart->total_items()>0): ?>
 								<h3 class="h3 mt-5">Detail Keranjang</h3>
@@ -122,7 +122,7 @@
 									</tfoot>
 								</table>
 								<button type="button" class="btn btn-danger float-right ml-3" data-toggle="modal" data-target="#checkoutModal">
-									Check Out
+									CheckOut
 								</button>
 								<a href="<?= base_url('Transaksi/bersihkanKeranjang') ?>" class="btn btn-secondary float-right ml-3">
 									Batal
@@ -132,7 +132,7 @@
 						<div class="full_width sorting_panel">
 							<div class="sorting_destination">
 								<select class="form-control selectpicker" id="search_rooms">
-									<option value="jumlah_terpesan">Sort by : Popularity</option>
+									<option value="jumlah_terpesan">Urutkan Berdasarkan : Popularitas</option>
 									<?php 
 									$p = 1;
 									while ($p <= $count_page) { ?>
@@ -145,7 +145,7 @@
 							</div>
 							<div class="sorting_destination">
 								<select class="form-control selectpicker" id="search_prices">
-									<option value="harga_jual">Sort by : Price</option>
+									<option value="harga_jual">Urutkan Berdasarkan : Harga</option>
 									<?php 
 									$h = 1;
 									while ($h <= $count_page) { ?>
@@ -202,7 +202,7 @@
 													<i class="fa fa-star"></i>
 													<i class="fa fa-star"></i>
 												</div>
-												<span class="review_right"><i class="fa fa-thumbs-up"></i> 52 Reviews</span>
+												<span class="review_right"><i class="fa fa-thumbs-up"></i> 52 Ulasan</span>
 											</div>
 										</div>
 									</div>
@@ -225,7 +225,7 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="checkoutModalLabel"><i class="fas fa-shopping-cart"></i> Check Out</h5>
+				<h5 class="modal-title" id="checkoutModalLabel"><i class="fas fa-shopping-cart"></i> CheckOut</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -261,7 +261,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-					<button type="submit" class="btn btn-success">Check Out</button>
+					<button type="submit" class="btn btn-success">CheckOut</button>
 				</div>
 			</form>
 		</div>

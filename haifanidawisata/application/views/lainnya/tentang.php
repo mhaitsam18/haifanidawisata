@@ -3,7 +3,7 @@
 	<!--page title start-->
 	<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(<?= base_url('assets/') ?>images/bg/page_title_bg.jpg);">
 		<ul>
-			<li><a href="javascript:;">About us</a></li>
+			<li><a href="javascript:;">Tentang Kami</a></li>
 		</ul>
 	</div>
 	<!--page title end-->
@@ -23,26 +23,26 @@
 				</div>
 				<div class="col-lg-7 col-md-7 col-sm-12 travelite_about_right_side">
 					<div class="right_side_details">
-						<h3>Short Story about <b class="traveller_text_b">Travellers</b></h3>
+						<h3>Sedikit Pengalaman dari <b class="traveller_text_b">Travellers</b></h3>
 						<p>
-							in 2015, We launched Travellers with the belief that other travellers would share our desire to experience authentic adventures in a responsible and sustainable manner. We've grown from a one-man show to a company of over 50 world wide, and from a handful of trips in all over the world to hundreds of adventures spanning the globe... and beyond! Travellers is part of PEAK’s Travel Group of companies, alongside leading small group adventure companies Peregrine, Geckos, Peregrine Reserve, Adventure Tours and The Adventure Company.
+						Pada tahun 2015, Kami meluncurkan Wisatawan dengan keyakinan bahwa wisatawan lain akan berbagi keinginan kami untuk mengalami petualangan otentik dengan cara yang bertanggung jawab dan berkelanjutan. Kami telah berkembang dari pertunjukan satu orang menjadi perusahaan lebih dari 50 di seluruh dunia, dan dari beberapa perjalanan di seluruh dunia menjadi ratusan petualangan yang mencakup dunia... dan seterusnya! Travelers adalah bagian dari perusahaan Grup Perjalanan PEAK, bersama dengan perusahaan petualangan grup kecil terkemuka Peregrine, Geckos, Peregrine Reserve, Adventure Tours, dan The Adventure Company.
 							<br>
 							<br>
-							There are many variations of passages of Lorem Ipsum available, but the joy have suffered alteration in some format, by injected humour.  There are many variations of passages of Lorem Ipsum available. 
+							Ada banyak variasi bagian Lorem Ipsum yang tersedia, tetapi kegembiraan telah mengalami perubahan dalam beberapa format, dengan humor yang disuntikkan. Ada banyak variasi bagian Lorem Ipsum yang tersedia. 
 						</p>
 					</div>
 					<div class="full_width check_lists">
 						<ul>
-							<li><label>integrity</label> <p>-Doing the right thing</p></li>
-							<li><label>Responsible</label> <p>-think globel,act local</p></li>
-							<li><label>Growth</label> <p>-Stakeholders in our own success</p></li>
-							<li><label>Innovation</label> <p>-Thriving on new ideas and embracing change</p></li>
-							<li><label>Fun</label> <p>-It’s engrained into who we are and what we do</p></li>
-							<li><label>Passion</label> <p>-We are inspired by the work we do and the trips we offer</p></li>
+							<li><label>Integritas</label> <p>-Melakukan hal yang benar</p></li>
+							<li><label>Bertanggung jawab</label> <p>-berpikir globel, bertindak lokal</p></li>
+							<li><label>Pertumbuhan</label> <p>-Pemangku kepentingan dalam kesuksesan kita sendiri</p></li>
+							<li><label>Inovasi</label> <p>-Berkembang pada ide-ide baru dan merangkul perubahan</p></li>
+							<li><label>Kesenangan</label> <p>-Itu tertanam dalam siapa kita dan apa yang kita lakukan</p></li>
+							<li><label>Gairah</label> <p>-Kami terinspirasi oleh pekerjaan yang kami lakukan dan perjalanan yang kami tawarkan</p></li>
 						</ul>
 					</div>
 					<div class="pull_left btn_left">
-						<a href="#" class="btn_green gallery_btn">view our gallery</a>
+						<a href="#" class="btn_green gallery_btn">Lihat Galeri Kami</a>
 					</div>
 				</div>
 			</div>
@@ -57,10 +57,10 @@
 					<div class="section_main">
 						<div class="icon"><i class="fa fa-anchor"></i></div>
 						<div class="box_inner">
-							<h4 class="box_title">our core values</h4>
+							<h4 class="box_title">Nilai Utama Kami</h4>
 							<p>By offering adventure-craving travellers an alternative to the resorts, cruises and motorcoach 
 							tours they were accustomed to, he not only changed the way people looked at their holiday time, but changed the face of travel forever.</p>
-							<a href="#">read more</a>
+							<a href="#">baca selengkapnya</a>
 						</div>
 					</div>
 				</div>
@@ -68,9 +68,9 @@
 					<div class="section_main">
 						<div class="icon"><i class="fa fa-thumbs-up"></i></div>
 						<div class="box_inner">
-							<h4 class="box_title">why choose travellers ?</h4>
+							<h4 class="box_title">Mengapa memilih travellers ?</h4>
 							<p>By offering adventure-craving travellers an alternative to the resorts, cruises and motorcoach tours they were accustomed to, he not only changed the way people looked at their holiday time, but changed the face of travel forever.</p>
-							<a href="#">read more</a>
+							<a href="#">baca selengkapnya</a>
 						</div>
 					</div>
 				</div>
@@ -78,9 +78,9 @@
 					<div class="section_main">
 						<div class="icon"><i class="fa fa-life-ring"></i></div>
 						<div class="box_inner">
-							<h4 class="box_title">Sustainable Tourism</h4>
+							<h4 class="box_title">Pariwisata Berkelanjutan</h4>
 							<p>By offering adventure-craving travellers an alternative to the resorts, cruises and motorcoach tours they were accustomed to, he not only changed the way people looked at their holiday time, but changed the face of travel forever.</p>
-							<a href="#">read more</a>
+							<a href="#">baca selengkapnya</a>
 						</div>
 					</div>
 				</div>
@@ -88,9 +88,9 @@
 					<div class="section_main">
 						<div class="icon"><i class="fa fa-users"></i></div>
 						<div class="box_inner">
-							<h4 class="box_title">our core values</h4>
+							<h4 class="box_title">Nilai Utama Kami</h4>
 							<p>By offering adventure-craving travellers an alternative to the resorts, cruises and motorcoach tours they were accustomed to, he not only changed the way people looked at their holiday time, but changed the face of travel forever.</p>
-							<a href="#">read more</a>
+							<a href="#">baca selengkapnya</a>
 						</div>
 					</div>
 				</div>
@@ -99,10 +99,10 @@
 					
 						<div class="icon"><i class="fa fa-trophy"></i></div>
 						<div class="box_inner">
-							<h4 class="box_title">why choose travellers ?</h4>
+							<h4 class="box_title">Mengapa memilih travellers ?</h4>
 							<p>By offering adventure-craving travellers an alternative to the resorts, cruises and motorcoach 
 							tours they were accustomed to, he not only changed the way people looked at their holiday time, but changed the face of travel forever.</p>
-							<a href="#">read more</a>
+							<a href="#">baca selengkapnya</a>
 						</div>
 					</div>
 				</div>
@@ -110,10 +110,10 @@
 					<div class="section_main">
 						<div class="icon"><i class="fa fa-link"></i></div>
 						<div class="box_inner">
-							<h4 class="box_title">Sustainable Tourism</h4>
+							<h4 class="box_title">Pariwisata Berkelanjutan</h4>
 							<p>By offering adventure-craving travellers an alternative to the resorts, cruises and motorcoach 
 							tours they were accustomed to, he not only changed the way people looked at their holiday time, but changed the face of travel forever.</p>
-							<a href="#">read more</a>
+							<a href="#">baca selengkapnya</a>
 						</div>
 					</div>
 				</div>
@@ -125,8 +125,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="heading_team">
-					<h3>Team</h3>
-					<p>Create stunning pages with our powerful admin panel. Functionality and usability combine. Travelllers Deals and Offers on Hotels, Vacation Packages, Flights, Cruises and Car Rentals</p>
+					<h3>Tim</h3>
+					<p>Travellers Deal and Offers di Hotel, Paket Liburan, Penerbangan, Kapal Pesiar dan Sewa Mobil</p>
 				</div>
 				<!-- team first start -->
 				<div class="col-lg-3 col-md-3 col-sm-6">
@@ -222,15 +222,15 @@
 			<div class="row">
 				<div class=" col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<div class="tr_contact_wrap">
-						<h4>where you would like to go</h4>
-						<h3 class="tell_us"><b>tell us</b> we will help you</h3>
+						<h4>Kemana anda ingin pergi</h4>
+						<h3 class="tell_us"><b>beri tahu kami</b> kami akan membantu anda</h3>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-lg-offset-1">
 					<div class="hello_wrapper">
 						<i class="fa fa-phone"></i>
 						<div class="tr_contact_wrap">
-							<h4>Say Hello</h4>
+							<h4>Pesan kami</h4>
 							<h3 class="contact">1-230-852-436</h3>
 						</div>
 					</div>
@@ -239,7 +239,7 @@
 					<div class="hello_wrapper">
 						<i class="fa fa-envelope"></i>
 						<div class="tr_contact_wrap">
-							<h4>Say Hi</h4>
+							<h4>Email Kami</h4>
 							<h3 class="contact">info@travellers.com</h3>
 						</div>
 					</div>
@@ -258,7 +258,7 @@
 						<div class="percentage-light" data-percent="80">
 							<i class="fa fa-globe"></i>
 						</div>
-						<div class="counter_title">places to visit the world</div>
+						<div class="counter_title">tempat di seluruh dunia</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -267,7 +267,7 @@
 						<div class="percentage_blue" data-percent="90">
 							<i class="fa fa-plane"></i>
 						</div>
-						<div class="counter_title">airlines to travel</div>
+						<div class="counter_title">penerbangan untuk perjalanan</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -276,7 +276,7 @@
 						<div class="percentage_red" data-percent="85">
 							<i class="fa fa-car"></i>
 						</div>
-						<div class="counter_title">vip transport options</div>
+						<div class="counter_title">perjalanan vip</div>
 					</div>
 				</div>
 				<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
@@ -285,7 +285,7 @@
 						<div class="percentage_skyblue" data-percent="70">
 							<i class="fa fa-building-o"></i>
 						</div>
-						<div class="counter_title">amazing hotels to stay</div>
+						<div class="counter_title">hotel yang berkualitas untuk menginap</div>
 					</div>
 				</div>
 			</div>

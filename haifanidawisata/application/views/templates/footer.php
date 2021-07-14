@@ -9,7 +9,7 @@
 							<p>
 								Haifa Nida Wisata adalah salah satu perusahaan travel haji terbesar yang ada di Kota Karawang, yang sudah berdiri sejak tahun 2007. <br> <br> Lokasi awal berdiri perusahaan ini adalah di daerah Hegarmanah Bandung, kemudian tidak lama itu pindah ke daerah Cilamaya Karawang. Dan dimulai dari sinilah, banyak orang Karawang yang mengenal Haifa Nida Wisata sebagai perusahaan travel haji dan umroh yang...
 							</p>
-							<a href="https://mauzafiq.com/haifa-nida-wisata-karawang/" target="_blank">Read More <i class="fa fa-angle-right"></i></a>
+							<a href="https://mauzafiq.com/haifa-nida-wisata-karawang/" target="_blank">Baca selengkapnya <i class="fa fa-angle-right"></i></a>
 						</aside>
 						<aside class="widget widget_tag_cloud">
 							<h4 class="widget-title">Tags</h4>
@@ -18,7 +18,7 @@
 					</div>
 					<div class="col-md-4">
 						<aside class="widget widget_recent_entries">
-							<h4 class="widget-title">Recent Posts</h4>
+							<h4 class="widget-title">Tulisan terbaru</h4>
 							<ul>
 								<li>
 									<?php
@@ -40,7 +40,7 @@
 											echo $isi;
 											?>
 										</p>
-										<a href="<?= base_url('Informasi/detail/blog/' . $blog_footer['id']) ?>">Read More</a>
+										<a href="<?= base_url('Informasi/detail/blog/' . $blog_footer['id']) ?>">Baca selengkapnya</a>
 									</div>
 								</li>
 								<li>
@@ -63,28 +63,28 @@
 											echo $isi;
 											?>
 										</p>
-										<a href="<?= base_url('Informasi/detail/berita/' . $berita_footer['id']) ?>">Read More</a>
+										<a href="<?= base_url('Informasi/detail/berita/' . $berita_footer['id']) ?>">Baca selengkapnya</a>
 									</div>
 								</li>
 								<li>
 									<img src="<?= base_url('assets/') ?>images/blog/recent_blog_footer1.jpg" alt="Recent blog" />
 									<div>
 										<p>Nunc cursus libero purus ac congue arcu cursus..</p>
-										<a href="#">Read More</a>
+										<a href="#">Baca selengkapnya</a>
 									</div>
 								</li>
 								<li>
 									<img src="<?= base_url('assets/') ?>images/blog/recent_blog_footer2.jpg" alt="Recent blog" />
 									<div>
 										<p>Nunc cursus libero purus ac congue arcu cursus..</p>
-										<a href="#">Read More</a>
+										<a href="#">Baca selengkapnya</a>
 									</div>
 								</li>
 
 							</ul>
 						</aside>
 						<aside class="widget widget_links">
-							<h4 class="widget-title">Useful Links</h4>
+							<h4 class="widget-title">Link bantuan</h4>
 							<ul>
 								<?php $lainnya = $this->db->get_where('haifa_sub_menu', ['menu_id' => 6])->result_array() ?>
 								<?php foreach ($lainnya as $item) : ?>
@@ -399,8 +399,8 @@
 							<div id="widget_global_search" class="wsa_tab_content">
 								<form>
 									<div class="travel_form_element">
-										<label>All Destination</label>
-										<select class="selectpicker" multiple data-live-search="true" title="Your Destination">
+										<label>Semua Tujuan</label>
+										<select class="selectpicker" multiple data-live-search="true" title="Tujuan Anda">
 											<option data-tokens="New Delhi, India (DEL)">New Delhi, India (DEL)</option>
 											<option data-tokens="Mumbai, India (BOM)">Mumbai, India (BOM)</option>
 											<option data-tokens="Bangalore, India (BLR)">Bangalore, India (BLR)</option>
@@ -414,8 +414,8 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Typology</label>
-										<select class="selectpicker" multiple data-live-search="true" title="Typology">
+										<label>Tipe Perjalanan</label>
+										<select class="selectpicker" multiple data-live-search="true" title="Tipe Perjalanan">
 											<option data-tokens="travel less">travel less</option>
 											<option data-tokens="stay shorter periods">stay shorter periods</option>
 											<option data-tokens="spend less">spend less</option>
@@ -427,19 +427,19 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Check in date</label>
+										<label>Tanggal check-in</label>
 										<input type="text" id="Check_in_date_global_search" placeholder="dd/mm/yyyy">
 										<i class="fa fa-calendar"></i>
 									</div>
 									<div class="travel_form_element">
-										<label>Check out date</label>
+										<label>Tanggal check-out</label>
 										<input type="text" id="Check_out_date_global_search" placeholder="dd/mm/yyyy">
 										<i class="fa fa-calendar"></i>
 									</div>
 									<div class="travel_form_element">
-										<label>Max-Budget</label>
-										<select class="selectpicker" data-live-search="true" title="your Max-Budget">
-											<option data-tokens="Rs. 2000 and Below">Rs. 2000 and Below"</option>
+										<label>Anggaran Maksimal</label>
+										<select class="selectpicker" data-live-search="true" title="Anggaran Maksimal">
+											<option data-tokens="Rs. 2000 and Below">Rs. 2000 ke bawah"</option>
 											<option data-tokens="Rs. 2001 - Rs. 5000">Rs. 2001 - Rs. 5000</option>
 											<option data-tokens="Rs. 2001 - Rs. 5000">Rs. 2001 - Rs. 5000</option>
 											<option data-tokens="Rs. 5001 - Rs. 10000">Rs. 5001 - Rs. 10000</option>
@@ -450,15 +450,15 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<button type="submit" class="btn-travel btn-yellow">Search</button>
+										<button type="submit" class="btn-travel btn-yellow">Cari</button>
 									</div>
 								</form>
 							</div>
 							<div id="widget_hotal_search" class="wsa_tab_content">
 								<form>
 									<div class="travel_form_element">
-										<label>All Destination</label>
-										<select class="selectpicker" multiple data-live-search="true" title="Your Destination">
+										<label>Semua Tujuan</label>
+										<select class="selectpicker" multiple data-live-search="true" title="Tujuan Anda">
 											<option data-tokens="New Delhi, India (DEL)">New Delhi, India (DEL)</option>
 											<option data-tokens="Mumbai, India (BOM)">Mumbai, India (BOM)</option>
 											<option data-tokens="Bangalore, India (BLR)">Bangalore, India (BLR)</option>
@@ -472,8 +472,8 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Amenities</label>
-										<select class="selectpicker" multiple title="Amenities">
+										<label>Fasilitas</label>
+										<select class="selectpicker" multiple title="Fasilitas">
 											<option data-tokens="Default">Default</option>
 											<option data-tokens="Room Services">Room Services</option>
 											<option data-tokens="Wi-Fi">Wi-Fi</option>
@@ -487,18 +487,18 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Check in date</label>
+										<label>Tanggal check-in</label>
 										<input type="text" id="Check_in_date_hotal_search" placeholder="dd/mm/yyyy">
 										<i class="fa fa-calendar"></i>
 									</div>
 									<div class="travel_form_element">
-										<label>Check out date</label>
+										<label>Tanggal check-out</label>
 										<input type="text" id="Check_out_date_hotal_search" placeholder="dd/mm/yyyy">
 										<i class="fa fa-calendar"></i>
 									</div>
 									<div class="travel_form_element">
-										<label>Accomodation</label>
-										<select class="selectpicker" title="Accomodation">
+										<label>Akomodasi</label>
+										<select class="selectpicker" title="Akomodasi">
 											<option data-tokens="Default">Default</option>
 											<option data-tokens="Residence">Residence</option>
 											<option data-tokens="Hotal">Hotal</option>
@@ -509,12 +509,12 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Rooms</label>
-										<input type="number" placeholder="No of rooms">
+										<label>Ruangan</label>
+										<input type="number" placeholder="Nomor Ruangan">
 									</div>
 									<div class="travel_form_element">
-										<label>Max-Budget</label>
-										<select class="selectpicker" data-live-search="true" title="your Max-Budget">
+										<label>Anggaran Maksimal</label>
+										<select class="selectpicker" data-live-search="true" title="your Anggaran Maksimal">
 											<option data-tokens="Rs. 2000 and Below">Rs. 2000 and Below"</option>
 											<option data-tokens="Rs. 2001 - Rs. 5000">Rs. 2001 - Rs. 5000</option>
 											<option data-tokens="Rs. 2001 - Rs. 5000">Rs. 2001 - Rs. 5000</option>
@@ -526,15 +526,15 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<button type="submit" class="btn-travel btn-yellow">Search</button>
+										<button type="submit" class="btn-travel btn-yellow">Cari</button>
 									</div>
 								</form>
 							</div>
 							<div id="widget_flight_search" class="wsa_tab_content">
 								<form>
 									<div class="travel_form_element">
-										<label>Flight Type</label>
-										<select class="selectpicker" title="Flight Type">
+										<label>Tipe Penerbangan</label>
+										<select class="selectpicker" title="Tipe Penerbangan">
 											<option data-tokens="Business">Business</option>
 											<option data-tokens="Economy">Economy</option>
 											<option data-tokens="First Class">First Class</option>
@@ -542,8 +542,8 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Flight Name</label>
-										<select class="selectpicker" title="Flight Name">
+										<label>Nama Penerbangan</label>
+										<select class="selectpicker" title="Nama Penerbangan">
 											<option data-tokens="Major Airlines (350)">Major Airlines (350)</option>
 											<option data-tokens="United Airlines (260)">United Airlines (260)</option>
 											<option data-tokens="Delta Airlines (620)">Delta Airlines (620)</option>
@@ -554,7 +554,7 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Flying From</label>
+										<label>Dari</label>
 										<select class="selectpicker" data-live-search="true" title="From">
 											<option data-tokens="New Delhi, India (DEL)">New Delhi, India (DEL)</option>
 											<option data-tokens="Mumbai, India (BOM)">Mumbai, India (BOM)</option>
@@ -569,7 +569,7 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Flying To</label>
+										<label>Ke</label>
 										<select class="selectpicker" data-live-search="true" title="To">
 											<option data-tokens="New Delhi, India (DEL)">New Delhi, India (DEL)</option>
 											<option data-tokens="Mumbai, India (BOM)">Mumbai, India (BOM)</option>
@@ -584,7 +584,7 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Flight Times</label>
+										<label>Waktu Penerbangan</label>
 										<select class="selectpicker" title="Flight Times">
 											<option data-tokens="5am to 7am">5am to 7am</option>
 											<option data-tokens="7am to 9am">7am to 9am</option>
@@ -601,15 +601,15 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<button type="submit" class="btn-travel btn-yellow">Search</button>
+										<button type="submit" class="btn-travel btn-yellow">Cari</button>
 									</div>
 								</form>
 							</div>
 							<div id="widget_local_search" class="wsa_tab_content">
 								<form>
 									<div class="travel_form_element">
-										<label>All Destination</label>
-										<select class="selectpicker" multiple data-live-search="true" title="Your Destination">
+										<label>Semua Tujuan</label>
+										<select class="selectpicker" multiple data-live-search="true" title="Tujuan Anda">
 											<option data-tokens="New Delhi, India (DEL)">New Delhi, India (DEL)</option>
 											<option data-tokens="Mumbai, India (BOM)">Mumbai, India (BOM)</option>
 											<option data-tokens="Bangalore, India (BLR)">Bangalore, India (BLR)</option>
@@ -623,8 +623,8 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Typology</label>
-										<select class="selectpicker" multiple data-live-search="true" title="Typology">
+										<label>Tipe Perjalanan</label>
+										<select class="selectpicker" multiple data-live-search="true" title="Tipe Perjalanan">
 											<option data-tokens="travel less">travel less</option>
 											<option data-tokens="stay shorter periods">stay shorter periods</option>
 											<option data-tokens="spend less">spend less</option>
@@ -636,18 +636,18 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<label>Check in date</label>
+										<label>Tanggal check-in</label>
 										<input type="text" id="Check_in_date_local_search" placeholder="dd/mm/yyyy">
 										<i class="fa fa-calendar"></i>
 									</div>
 									<div class="travel_form_element">
-										<label>Check out date</label>
+										<label>Tanggal check-out</label>
 										<input type="text" id="Check_out_date_local_search" placeholder="dd/mm/yyyy">
 										<i class="fa fa-calendar"></i>
 									</div>
 									<div class="travel_form_element">
-										<label>Max-Budget</label>
-										<select class="selectpicker" data-live-search="true" title="your Max-Budget">
+										<label>Anggaran Maksimal</label>
+										<select class="selectpicker" data-live-search="true" title="your Anggaran Maksimal">
 											<option data-tokens="Rs. 2000 and Below">Rs. 2000 and Below"</option>
 											<option data-tokens="Rs. 2001 - Rs. 5000">Rs. 2001 - Rs. 5000</option>
 											<option data-tokens="Rs. 2001 - Rs. 5000">Rs. 2001 - Rs. 5000</option>
@@ -659,13 +659,13 @@
 										</select>
 									</div>
 									<div class="travel_form_element">
-										<button type="submit" class="btn-travel btn-yellow">Search</button>
+										<button type="submit" class="btn-travel btn-yellow">Cari</button>
 									</div>
 								</form>
 							</div>
 						</aside>
 						<aside class="widget payment_method">
-							<h4 class="widget-title">Supported Payment Method</h4>
+							<h4 class="widget-title">METODE PEMBAYARAN YANG DIDUKUNG</h4>
 							<a href="#"><img src="<?= base_url('assets/') ?>images/Payment-Images.png" alt="Payment Method" /></a>
 						</aside>
 					</div>
@@ -676,8 +676,8 @@
 		<div class="copyright">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-6 col-sm-6"> <span>Stay Connected with Us - </span> <a href="https://www.facebook.com/Haifa-Nida-Wisata-518234881974274/"><i class="fa fa-facebook"></i></a> <a href="https://www.instagram.com/haifanidawisata_umroh/"><i class="fa fa-instagram"></i></a> <a href="https://twitter.com/HaifaJakarta"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="https://id.linkedin.com/in/fakhry-elrazy-5b2392ba"><i class="fa fa-linkedin"></i></a> <a href="https://id.linkedin.com/in/muhammad-haitsam-15742114b"><i class="fa fa-rss"></i></a> </div>
-					<div class="col-md-6 col-sm-6 text-right"> <span>Haifa Nida Wisata @<?= date('Y') ?>. All Right Reserved</span> </div>
+					<div class="col-md-6 col-sm-6"> <span>Tetap berhubungan dengan kami - </span> <a href="https://www.facebook.com/Haifa-Nida-Wisata-518234881974274/"><i class="fa fa-facebook"></i></a> <a href="https://www.instagram.com/haifanidawisata_umroh/"><i class="fa fa-instagram"></i></a> <a href="https://twitter.com/HaifaJakarta"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="https://id.linkedin.com/in/fakhry-elrazy-5b2392ba"><i class="fa fa-linkedin"></i></a> <a href="https://id.linkedin.com/in/muhammad-haitsam-15742114b"><i class="fa fa-rss"></i></a> </div>
+					<div class="col-md-6 col-sm-6 text-right"> <span>Haifa Nida Wisata @<?= date('Y') ?>.</span> </div>
 				</div>
 			</div>
 		</div>
@@ -695,7 +695,6 @@
 
 			});
 		</script>
-		<script type="text/javascript" src="<?= base_url('assets/') ?>js/jquery-1.11.3.js"></script>
 		<!-- <script src="<?= base_url('assets/') ?>js/jquery-3.6.0.min.js"></script> -->
 		<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 		<script>

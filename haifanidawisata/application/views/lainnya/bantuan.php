@@ -15,28 +15,28 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="best_feature_wrapper">
 						<div class="best_feature_icon"><i class="fa fa-dollar"></i><span class="icon_overlay"></span></div>
-						<h3>Price Guarantee</h3>
+						<h3>Jaminan Harga</h3>
 						<p>Duis non lectus sit amet Etiam adipiscing morbi est imperdiet cursus ame elementum vitae eros.</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="best_feature_wrapper">
 						<div class="best_feature_icon"><i class="fa fa-lock"></i><span class="icon_overlay"></span></div>
-						<h3>Trust & Safety</h3>
+						<h3>Aman dan Terpercaya</h3>
 						<p>Duis non lectus sit amet Etiam adipiscing morbi est imperdiet cursus ame elementum vitae eros.</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="best_feature_wrapper">
 						<div class="best_feature_icon"><i class="fa fa-plane"></i><span class="icon_overlay"></span></div>
-						<h3>Best tour</h3>
+						<h3>Tur Terbaik</h3>
 						<p>Duis non lectus sit amet Etiam adipiscing morbi est imperdiet cursus ame elementum vitae eros.</p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="best_feature_wrapper">
 						<div class="best_feature_icon"><i class="fa fa-thumbs-o-up"></i><span class="icon_overlay"></span></div>
-						<h3>Good guidance</h3>
+						<h3>Pemandu Terbaik</h3>
 						<p>Duis non lectus sit amet Etiam adipiscing morbi est imperdiet cursus ame elementum vitae eros.</p>
 					</div>
 				</div>
@@ -54,7 +54,7 @@
 							<div class="item style1">
 								<div class="text_wrapper">
 									<i class="fa fa-calendar-o"></i>
-									<h3>Event Planning</h3>
+									<h3>Perencanaan Acara</h3>
 									<p>There are many variations of passages of lorem ipsum.</p>
 								</div>
 								<div class="image_wrapper">
@@ -64,7 +64,7 @@
 							<div class="item style2">
 								<div class="text_wrapper">
 									<i class="fa fa-hotel"></i>
-									<h3>Hotel Reservation</h3>
+									<h3>Reservasi Hotel</h3>
 									<p>There are many variations of passages of lorem ipsum.</p>
 								</div>
 								<div class="image_wrapper">
@@ -74,7 +74,7 @@
 							<div class="item style3">
 								<div class="text_wrapper">
 									<i class="fa fa-calendar-o"></i>
-									<h3>Event Planning</h3>
+									<h3>Perencanaan Acara</h3>
 									<p>There are many variations of passages of lorem ipsum.</p>
 								</div>
 								<div class="image_wrapper">
@@ -84,7 +84,7 @@
 							<div class="item style4">
 								<div class="text_wrapper">
 									<i class="fa fa-globe"></i>
-									<h3>WorldWide tours</h3>
+									<h3>Tur di Seluruh Dunia</h3>
 									<p>There are many variations of <br>passages of lorem ipsum.</p>
 								</div>
 								<div class="image_wrapper">
@@ -132,31 +132,31 @@
 						<div class="customer_says_detail">
 							<div class="csd" id="csd_1">
 								<h3>William Robert</h3>
-								<span>From <i class="country">Germany</i></span>
+								<span>Dari <i class="country">Jerman</i></span>
 							</div>
 							<div class="csd" id="csd_2">
 								<h3>Sandy Moody</h3>
-								<span>From <i class="country">Europe</i></span>
+								<span>Dari <i class="country">Eropa</i></span>
 							</div>
 							<div class="csd" id="csd_3">
 								<h3>Alex Bowen</h3>
-								<span>From <i class="country">America</i></span>
+								<span>Dari <i class="country">America</i></span>
 							</div>
 							<div class="csd" id="csd_4">
 								<h3>Jim	Blair</h3>
-								<span>From <i class="country">Germany</i></span>
+								<span>Dari <i class="country">Jerman</i></span>
 							</div>
 							<div class="csd" id="csd_5">
 								<h3>Ben	Stevens</h3>
-								<span>From <i class="country">Australia</i></span>
+								<span>Dari <i class="country">Australia</i></span>
 							</div>
 							<div class="csd" id="csd_6">
 								<h3>Sandy Moody</h3>
-								<span>From <i class="country">Europe</i></span>
+								<span>Dari <i class="country">Eropa</i></span>
 							</div>
 							<div class="csd" id="csd_7">
 								<h3>Alex Bowen</h3>
-								<span>From <i class="country">Germany</i></span>
+								<span>Dari <i class="country">Jerman</i></span>
 							</div>
 						</div>
 					</div>

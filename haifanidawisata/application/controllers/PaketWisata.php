@@ -1,11 +1,12 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class PaketWisata extends CI_Controller {
+class PaketWisata extends CI_Controller
+{
 
 	public function __construct()
 	{
-		parent:: __construct();
+		parent::__construct();
 		$this->load->model('Member_model');
 		$this->load->model('Wisata_model');
 		$this->load->library('form_validation');
@@ -31,12 +32,12 @@ class PaketWisata extends CI_Controller {
 		$this->db->join('paket_wisata', 'paket_unggulan.id_paket_wisata=paket_wisata.id');
 		$data['paket_unggulan'] = $this->db->get('paket_unggulan')->result_array();
 
-		$config['base_url'] = base_url('PaketWisata/index/'.$list.'/');
+		$config['base_url'] = base_url('PaketWisata/index/' . $list . '/');
 		// $config['total_rows'] = $this->Produk_model->countAllproduk();
 		if ($this->input->post('keyword')) {
 			$data['keyword'] = $this->input->post('keyword');
 			$this->session->set_userdata('keyword', $data['keyword']);
-		} else{
+		} else {
 			// $data['keyword'] = null;
 			$data['keyword'] = $this->session->set_userdata('keyword');
 		}
@@ -60,13 +61,13 @@ class PaketWisata extends CI_Controller {
 		$data['total_rows'] = $config['total_rows'];
 		if ($list = 'list') {
 			$config['per_page'] = 4;
-		} else{
+		} else {
 			$config['per_page'] = 6;
 		}
 		$config['num_links'] = 2;
 
 		$data['per_page'] = $config['per_page'];
-		$data['count_page'] = $data['total_rows']/$data['per_page'];
+		$data['count_page'] = $data['total_rows'] / $data['per_page'];
 		//styling
 		$config['full_tag_open'] = '<div class="full_width pagination_bottom"><ul class="pagination">';
 		$config['full_tag_close'] = '</div></ul>';
@@ -79,17 +80,17 @@ class PaketWisata extends CI_Controller {
 		$config['last_tag_open'] = '<li>';
 		$config['last_tag_close'] = '</li>';
 
-		if ($config['total_rows']-$this->uri->segment(4)>7) {
+		if ($config['total_rows'] - $this->uri->segment(4) > 7) {
 			$config['next_link'] = '&raquo';
-		} else{
+		} else {
 			$config['next_link'] = 'Next';
 		}
 		$config['next_tag_open'] = '<li>';
 		$config['next_tag_close'] = '</li>';
 
-		if ($this->uri->segment(4)>7) {
+		if ($this->uri->segment(4) > 7) {
 			$config['prev_link'] = '&laquo';
-		} else{
+		} else {
 			$config['prev_link'] = 'Prev';
 		}
 		$config['prev_tag_open'] = '<li>';
@@ -97,15 +98,15 @@ class PaketWisata extends CI_Controller {
 		if (empty($this->uri->segment(4))) {
 			$prev = '<li class="disabled"><a>Prev</a></li>';
 			$next = '';
-		} elseif ($config['total_rows']-$this->uri->segment(4)<3) {
+		} elseif ($config['total_rows'] - $this->uri->segment(4) < 3) {
 			$prev = '';
 			$next = '<li class="disabled"><a>Next</a></li>';
 		} else {
 			$next = '';
 			$prev = '';
 		}
-		$config['cur_tag_open'] = $prev.'<li class="active"><a>';
-		$config['cur_tag_close'] = '</a></li>'.$next;
+		$config['cur_tag_open'] = $prev . '<li class="active"><a>';
+		$config['cur_tag_close'] = '</a></li>' . $next;
 
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
@@ -116,7 +117,7 @@ class PaketWisata extends CI_Controller {
 		// $config['attributes']['rel'] = FALSE;
 		$this->pagination->initialize($config);
 		$data['start'] = $this->uri->segment(4);
-		$data['paket_wisata'] = $this->Wisata_model->getPaketWisataByLimit($config['per_page'],$data['start'], $data['keyword']);
+		$data['paket_wisata'] = $this->Wisata_model->getPaketWisataByLimit($config['per_page'], $data['start'], $data['keyword']);
 		$data['maskapai'] = $this->db->get('maskapai')->result_array();
 		$data['pendidikan'] = $this->db->get('pendidikan')->result_array();
 		$data['kategori_wisata'] = $this->db->get('kategori_wisata')->result_array();
@@ -148,12 +149,12 @@ class PaketWisata extends CI_Controller {
 		$this->db->join('paket_wisata', 'paket_unggulan.id_paket_wisata=paket_wisata.id');
 		$data['paket_unggulan'] = $this->db->get('paket_unggulan')->result_array();
 
-		$config['base_url'] = base_url('PaketWisata/umroh/'.$list.'/');
+		$config['base_url'] = base_url('PaketWisata/umroh/' . $list . '/');
 		// $config['total_rows'] = $this->Produk_model->countAllproduk();
 		if ($this->input->post('keyword')) {
 			$data['keyword'] = $this->input->post('keyword');
 			$this->session->set_userdata('keyword', $data['keyword']);
-		} else{
+		} else {
 			// $data['keyword'] = null;
 			$data['keyword'] = $this->session->set_userdata('keyword');
 		}
@@ -171,20 +172,20 @@ class PaketWisata extends CI_Controller {
 		// }
 		$this->db->like('nama_paket', $data['keyword']);
 		$this->db->from('paket_wisata');
-		$this->db->where_in('id_kategori_wisata', [1,2]);
+		$this->db->where_in('id_kategori_wisata', [1, 2]);
 		$this->db->where('aktif', 1);
 		$this->db->where('TIMESTAMPDIFF(MONTH,CURDATE(),tanggal_keberangkatan) >', 1);
 		$config['total_rows'] = $this->db->count_all_results();
 		$data['total_rows'] = $config['total_rows'];
 		if ($list = 'list') {
 			$config['per_page'] = 4;
-		} else{
+		} else {
 			$config['per_page'] = 6;
 		}
 		$config['num_links'] = 2;
 
 		$data['per_page'] = $config['per_page'];
-		$data['count_page'] = $data['total_rows']/$data['per_page'];
+		$data['count_page'] = $data['total_rows'] / $data['per_page'];
 		//styling
 		$config['full_tag_open'] = '<div class="full_width pagination_bottom"><ul class="pagination">';
 		$config['full_tag_close'] = '</div></ul>';
@@ -197,33 +198,33 @@ class PaketWisata extends CI_Controller {
 		$config['last_tag_open'] = '<li>';
 		$config['last_tag_close'] = '</li>';
 
-		if ($config['total_rows']-$this->uri->segment(4)>7) {
-		  $config['next_link'] = '&raquo';
-		} else{
-		  $config['next_link'] = 'Next';
+		if ($config['total_rows'] - $this->uri->segment(4) > 7) {
+			$config['next_link'] = '&raquo';
+		} else {
+			$config['next_link'] = 'Next';
 		}
 		$config['next_tag_open'] = '<li>';
 		$config['next_tag_close'] = '</li>';
 
-		if ($this->uri->segment(4)>7) {
-		  $config['prev_link'] = '&laquo';
-		} else{
-		  $config['prev_link'] = 'Prev';
+		if ($this->uri->segment(4) > 7) {
+			$config['prev_link'] = '&laquo';
+		} else {
+			$config['prev_link'] = 'Prev';
 		}
 		$config['prev_tag_open'] = '<li>';
 		$config['prev_tag_close'] = '</li>';
 		if (empty($this->uri->segment(4))) {
 			$prev = '<li class="disabled"><a>Prev</a></li>';
 			$next = '';
-		} elseif ($config['total_rows']-$this->uri->segment(4)<3) {
+		} elseif ($config['total_rows'] - $this->uri->segment(4) < 3) {
 			$prev = '';
 			$next = '<li class="disabled"><a>Next</a></li>';
 		} else {
 			$next = '';
 			$prev = '';
 		}
-		$config['cur_tag_open'] = $prev.'<li class="active"><a>';
-		$config['cur_tag_close'] = '</a></li>'.$next;
+		$config['cur_tag_open'] = $prev . '<li class="active"><a>';
+		$config['cur_tag_close'] = '</a></li>' . $next;
 
 		$config['num_tag_open'] = '<li>';
 		$config['num_tag_close'] = '</li>';
@@ -234,7 +235,7 @@ class PaketWisata extends CI_Controller {
 		// $config['attributes']['rel'] = FALSE;
 		$this->pagination->initialize($config);
 		$data['start'] = $this->uri->segment(4);
-		$data['paket_wisata'] = $this->Wisata_model->getPaketUmrohByLimit($config['per_page'],$data['start'], $data['keyword']);
+		$data['paket_wisata'] = $this->Wisata_model->getPaketUmrohByLimit($config['per_page'], $data['start'], $data['keyword']);
 		$data['maskapai'] = $this->db->get('maskapai')->result_array();
 		$data['pendidikan'] = $this->db->get('pendidikan')->result_array();
 		$data['kategori_wisata'] = $this->db->get('kategori_wisata')->result_array();
@@ -243,5 +244,4 @@ class PaketWisata extends CI_Controller {
 		$this->load->view('paket-wisata/umroh-haji', $data);
 		$this->load->view('templates/footer', $data);
 	}
-	
 }
