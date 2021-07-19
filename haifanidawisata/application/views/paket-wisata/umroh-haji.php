@@ -1,3 +1,11 @@
+<style>
+	.modal-dialog {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%) !important;
+	}
+</style>
 <div id="content_wrapper">
 	<!--page title Start-->
 	<div class="page_title" data-stellar-background-ratio="0" data-stellar-vertical-offset="0" style="background-image:url(<?= base_url('assets/') ?>images/bg/page_title_bg.jpg);">
@@ -214,7 +222,7 @@
 												</ul>
 												<!-- desc icons End-->
 												<div>
-													<button id="btn_checkout_umroh" data-href="<?= base_url('Transaksi/checkoutPaket/') . $pw['pid'] ?>" class="list_view_details btns">Checkout</button>
+													<button id="btn_checkout_umroh" data-href="<?= base_url('Transaksi/checkoutPaket/') . $pw['pid'] ?>" class="btn-yellow list_view_details btns">Checkout</button>
 												</div>
 											</div>
 										</div>
@@ -265,7 +273,7 @@
 <!-- Modal -->
 <div class="modal fade" id="checkoutModal" tabindex="-1" role="dialog" aria-labelledby="checkoutModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
-		<div class="modal-content">
+		<div class="modal-content" style="margin: 0 auto !important;">
 			<div class="modal-header">
 				<h5 class="modal-title" id="checkoutModalLabel">Masukkan Jumlah Jamaah</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -279,8 +287,8 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-				<button type="button" class="btn btn-primary" id="btn_final_checkout">Checkout</button>
+				<button type="button" class="btn-travel" data-dismiss="modal">Tutup</button>
+				<button type="button" class="btn-travel btn-yellow" id="btn_final_checkout">Checkout</button>
 			</div>
 		</div>
 	</div>

@@ -577,10 +577,23 @@
 															</div>
 														</div>
 														<div class="checkbox_book">
-															<input id="cek_paspor" type="checkbox" name="cek_paspor[]" value="sudah" class="detail">
-															<label for="cek_paspor">Sudah memiliki paspor?</label>
+															<input id="cek_paspor<?=$i?>" type="checkbox" name="cek_paspor[]" value="sudah" class="detail">
+															<label for="cek_paspor<?=$i?>">Sudah memiliki paspor?</label>
 														</div>
-														<div id="paspor">
+
+														<script>
+															$(document).ready(function() {
+																$("#paspor<?=$i?>").css("display", "none");
+																$(".checkbox_book").click(function() { //Memberikan even ketika class detail di klik (class detail ialah class radio button)
+																	if ($("#cek_paspor<?=$i?>:checkbox:checked").val() == "sudah") { //Jika radio button "berbeda" dipilih maka tampilkan form-inputan
+																		$("#paspor<?=$i?>").slideDown("fast"); //Efek Slide Down (Menampilkan Form Input)
+																	} else {
+																		$("#paspor<?=$i?>").slideUp("fast"); //Efek Slide Up (Menghilangkan Form Input)
+																	}
+																});
+															});
+														</script>
+														<div id="paspor<?=$i?>">
 															<div class="col-lg-6 col-md-6">
 																<label for="no_paspor">Nomor Paspor</label>
 																<input type="text" class="booking_input" id="no_paspor" name="no_paspor[]" value="<?= set_value('no_paspor') ?>">
@@ -664,7 +677,7 @@
 																<span>Harga Paket</span><span>Rp. <?= number_format($paket_wisata['harga_paket'], 2, ',', '.') ?></span>
 															</li>
 															<li>
-																<span>Jumlah Orang</span><span><?=$sum?></span>
+																<span>Jumlah Orang</span><span><?= $sum ?></span>
 															</li>
 															<li>
 																<span>Tambahan(1)</span><span>Rp. 0,00</span>
@@ -676,7 +689,7 @@
 																<span>Diskon <?= number_format($paket_wisata['diskon'] * 100, 0) ?></span><span>(-)Rp. <?= number_format($paket_wisata['diskon'] * $paket_wisata['harga_paket'], 2, ',', '.')  ?></span>
 															</li>
 															<li class="total_row">
-																<span>Total</span><span>Rp. <?= number_format(($paket_wisata['harga_paket']*$sum) - ($paket_wisata['diskon'] * $paket_wisata['harga_paket']), 2, ',', '.')  ?></span>
+																<span>Total</span><span>Rp. <?= number_format(($paket_wisata['harga_paket'] * $sum) - ($paket_wisata['diskon'] * $paket_wisata['harga_paket']), 2, ',', '.')  ?></span>
 															</li>
 														</ul>
 													</div>
@@ -1044,7 +1057,7 @@
 															</tr>
 															<tr>
 																<td>Jumlah Orang</td>
-																<td><?=$sum?></td>
+																<td><?= $sum ?></td>
 															</tr>
 															<tr>
 																<td>Pajak</td>
@@ -1056,7 +1069,7 @@
 															</tr>
 															<tr class="total_row">
 																<td>Total</td>
-																<td>Rp. <?= number_format(($paket_wisata['harga_paket']*$sum) - $paket_wisata['diskon'] * $paket_wisata['harga_paket'], 2, ',', '.')  ?></td>
+																<td>Rp. <?= number_format(($paket_wisata['harga_paket'] * $sum) - $paket_wisata['diskon'] * $paket_wisata['harga_paket'], 2, ',', '.')  ?></td>
 															</tr>
 														</table>
 														<!--  Payment Table End -->
@@ -1200,15 +1213,3 @@
 </div>
 <!--content body end-->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script>
-	$(document).ready(function() {
-		$("#paspor").css("display", "none");
-		$(".detail").click(function() { //Memberikan even ketika class detail di klik (class detail ialah class radio button)
-			if ($("input[name='cek_paspor']:checked").val() == "sudah") { //Jika radio button "berbeda" dipilih maka tampilkan form-inputan
-				$("#paspor").slideDown("fast"); //Efek Slide Down (Menampilkan Form Input)
-			} else {
-				$("#paspor").slideUp("fast"); //Efek Slide Up (Menghilangkan Form Input)
-			}
-		});
-	});
-</script>

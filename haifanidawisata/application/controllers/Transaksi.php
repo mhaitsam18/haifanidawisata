@@ -11,6 +11,9 @@ class Transaksi extends CI_Controller
 		$this->load->model('Produk_model');
 		date_default_timezone_set('Asia/Jakarta');
 		$url = $this->uri->segment(1) . '___' . $this->uri->segment(2) . '___' . $this->uri->segment(3);
+		if($this->uri->segment(4)){
+			$url .= '___' . $this->uri->segment(4);
+		}
 		is_logged_in($url);
 	}
 
